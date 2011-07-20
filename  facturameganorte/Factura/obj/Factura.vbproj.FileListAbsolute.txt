@@ -1,0 +1,90 @@
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\bin\Factura.dll
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\bin\Factura.pdb
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\bin\Factura.xml
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\ResolveAssemblyReference.cache
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\Factura.NotaCredito.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\Factura.ReporteFactura.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\Factura.ReporteGuiaDespacho.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\Factura.Resources.resources
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\Factura.vbproj.GenerateResource.Cache
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\Factura.dll
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\Factura.xml
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto\Factura\obj\Debug\Factura.pdb
+D:\Users\Salex\Desktop\Proyecto\Factura\bin\Factura.dll
+D:\Users\Salex\Desktop\Proyecto\Factura\bin\Factura.pdb
+D:\Users\Salex\Desktop\Proyecto\Factura\bin\Factura.xml
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\Factura.NotaCredito.rpt
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\Factura.ReporteFactura.rpt
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\Factura.ReporteGuiaDespacho.rpt
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\Factura.Resources.resources
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\Factura.vbproj.GenerateResource.Cache
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\Factura.dll
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\Factura.xml
+D:\Users\Salex\Desktop\Proyecto\Factura\obj\Debug\Factura.pdb
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\bin\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\bin\Factura.pdb
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\bin\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\ResolveAssemblyReference.cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\Factura.NotaCredito.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\Factura.ReporteFactura.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\Factura.ReporteGuiaDespacho.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\Factura.Resources.resources
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\Factura.vbproj.GenerateResource.Cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Proyecto 24-6-11\Factura\obj\Debug\Factura.pdb
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\bin\Factura.dll
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\bin\Factura.pdb
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\bin\Factura.xml
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\ResolveAssemblyReference.cache
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\Factura.NotaCredito.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\Factura.ReporteFactura.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\Factura.ReporteGuiaDespacho.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\Factura.Resources.resources
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\Factura.vbproj.GenerateResource.Cache
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\Factura.dll
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\Factura.xml
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Debug\Factura.pdb
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\ResolveAssemblyReference.cache
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\Factura.NotaCredito.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\Factura.ReporteFactura.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\Factura.ReporteGuiaDespacho.rpt
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\Factura.Resources.resources
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\Factura.vbproj.GenerateResource.Cache
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\Factura.dll
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\Factura.xml
+D:\U\1 Semestre 2011\Taller  De Sistema\MEGANORTE\Factura\Proyecto 24-6-11\Factura\obj\Release\Factura.pdb
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\bin\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\bin\Factura.pdb
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\bin\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\ResolveAssemblyReference.cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\Factura.NotaCredito.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\Factura.ReporteFactura.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\Factura.ReporteGuiaDespacho.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\Factura.Resources.resources
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\Factura.vbproj.GenerateResource.Cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Debug\Factura.pdb
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\ResolveAssemblyReference.cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\Factura.NotaCredito.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\Factura.ReporteFactura.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\Factura.ReporteGuiaDespacho.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\Factura.Resources.resources
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\Factura.vbproj.GenerateResource.Cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Version Presentable\Factura\obj\Release\Factura.pdb
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\bin\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\bin\Factura.pdb
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\bin\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\ResolveAssemblyReference.cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\Factura.NotaCredito.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\Factura.ReporteFactura.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\Factura.ReporteGuiaDespacho.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\Factura.Resources.resources
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\Factura.vbproj.GenerateResource.Cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\proyecto 19-07-2011 (Version SVN)\Factura\obj\Debug\Factura.pdb

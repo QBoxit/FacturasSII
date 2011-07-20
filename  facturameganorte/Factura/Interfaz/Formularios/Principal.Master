@@ -1,0 +1,62 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Principal.master.vb" Inherits="Factura.Principal"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Administración de Facturas</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+       <table style="width: 1024x; height: 768px; border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none;">
+                <tr>
+                    <td rowspan="4" style="width: 10%; background-color: gainsboro; height: 100%;" valign="top">
+                        <br />
+                        <br />
+                        <br />
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" Font-Bold="True" Height="274px">
+                                <ParentNodeStyle Font-Bold="False" />
+                                <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                                <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
+                                    VerticalPadding="0px" />
+                                <Nodes>
+                                    <asp:TreeNode Text="Men&#250;" Value="nodoMenu">
+                                        <asp:TreeNode Text="Emitir Documentos Tributarios" Value="nodoEmitir">
+                                            <asp:TreeNode Text="Factura" Value="nodoFactura"></asp:TreeNode>
+                                            <asp:TreeNode Text="Nota de Credito" Value="nodoCredito"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="Administrar Documentos Tributarios" Value="nodoAdministrar">
+                                            <asp:TreeNode Text="Documentos Emitidos" Value="nodoEmitidos"></asp:TreeNode>
+                                            <asp:TreeNode Text="Documentos Recibidos" Value="nodoRecibidos"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="Libro de Compra y Venta" Value="nodoLibro">
+                                            <asp:TreeNode Text="Libro de Compra" Value="nodoCompra"></asp:TreeNode>
+                                            <asp:TreeNode Text="Libro de Venta" Value="nodoVenta"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </asp:TreeNode>
+                                </Nodes>
+                                <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
+                                    NodeSpacing="0px" VerticalPadding="0px" />
+                            </asp:TreeView>
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td style="height: 5%; background-color: gainsboro; width: 90%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 70%; background-color: transparent; width: 80%;" align="center" valign="top">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+                        &nbsp; &nbsp;&nbsp; &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 5%; background-color: gainsboro; width: 90%;">
+                    </td>
+                </tr>
+            </table>
+    </div>
+    </form>
+</body>
+</html>
