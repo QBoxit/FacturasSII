@@ -5,7 +5,7 @@ Public Class bd
 
     Private conn As NpgsqlConnection
 
-    Private stringConnection As String = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=golden;Database=facturacion;"
+    Private stringConnection As String = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=1a2b3c;Database=facturacion;"
 
 
     Public Sub New()
