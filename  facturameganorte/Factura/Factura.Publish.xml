@@ -1,0 +1,28 @@
+<publishData>
+  <publishTarget publishUrl="C:\Users\Van\Desktop\wea\">
+    <file relUrl="Interfaz/Imagenes/btn_limpiar.png" publishTime="4/5/2011 9:09:24 PM" />
+    <file relUrl="bin/ExLogger3.dll" publishTime="12/14/2010 1:51:54 PM" />
+    <file relUrl="bin/BasicFrame.WebControls.BasicDatePicker.dll" publishTime="4/24/2009 12:03:24 AM" />
+    <file relUrl="Interfaz/Imagenes/btn_agregar.png" publishTime="12/14/2010 1:52:00 PM" />
+    <file relUrl="Interfaz/Formularios/frmNotaCredito.aspx" publishTime="6/15/2011 9:51:22 PM" />
+    <file relUrl="Interfaz/Imagenes/btn_exportar.png" publishTime="12/14/2010 1:52:00 PM" />
+    <file relUrl="Interfaz/Imagenes/btn_saveFactura.png" publishTime="6/2/2011 12:01:22 AM" />
+    <file relUrl="Interfaz/Formularios/frmFactura.aspx" publishTime="6/14/2011 9:49:45 PM" />
+    <file relUrl="bin/Tde.Controles.RutTextBox.dll" publishTime="5/11/2010 10:09:35 PM" />
+    <file relUrl="Interfaz/Imagenes/SmallCalendar.png" publishTime="5/24/2011 5:14:05 PM" />
+    <file relUrl="Interfaz/Formularios/frmConstruccion.aspx" publishTime="6/1/2011 10:47:15 PM" />
+    <file relUrl="Interfaz/Formularios/frmBienvenida.aspx" publishTime="4/22/2011 4:07:23 PM" />
+    <file relUrl="Interfaz/Formularios/Principal.Master" publishTime="6/14/2011 2:53:41 AM" />
+    <file relUrl="bin/Factura.xml" publishTime="6/17/2011 11:15:46 AM" />
+    <file relUrl="bin/Mono.Security.dll" publishTime="7/7/2007 12:09:48 AM" />
+    <file relUrl="Interfaz/Imagenes/btn_guardar.png" publishTime="12/14/2010 1:52:00 PM" />
+    <file relUrl="bin/Factura.pdb" publishTime="6/17/2011 11:15:46 AM" />
+    <file relUrl="bin/Factura.dll" publishTime="6/17/2011 11:15:46 AM" />
+    <file relUrl="Web.config" publishTime="6/17/2011 10:12:40 AM" />
+    <file relUrl="Script/jquery-1.6.1.min.js" publishTime="6/7/2011 2:22:01 PM" />
+    <file relUrl="Default.aspx" publishTime="4/3/2011 11:16:54 AM" />
+    <file relUrl="bin/Npgsql.dll" publishTime="3/24/2011 8:43:56 PM" />
+    <file relUrl="Interfaz/Formularios/frmLibroCompra.aspx" publishTime="6/14/2011 6:38:59 PM" />
+    <file relUrl="Script/validarut.js" publishTime="8/21/2005 5:07:58 PM" />
+  </publishTarget>
+</publishData>
