@@ -3,6 +3,7 @@ Imports System.Data
 Imports CrystalDecisions.Shared
 Imports CrystalDecisions.CrystalReports.Engine
 
+'comentario
 Partial Public Class frmNotaCredito
     Inherits System.Web.UI.Page
 
