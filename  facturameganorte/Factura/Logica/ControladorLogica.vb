@@ -137,7 +137,10 @@ Public Class ControladorLogica
 
     Public Function Letras(ByVal numero As String) As String
         '********Declara variables de tipo cadena************
-        Dim palabras, entero, dec, flag As String
+        Dim palabras As String = ""
+        Dim entero As String = ""
+        Dim dec As String = ""
+        Dim flag As String = ""
 
         '********Declara variables de tipo entero***********
         Dim num, x, y As Integer
@@ -473,7 +476,7 @@ Public Class ControladorLogica
         Dim semilla As String = ""
         reader.WhitespaceHandling = WhitespaceHandling.None
         Do While (reader.Read())
-            Dim nombreNodo As String
+            Dim nombreNodo As String = ""
             Select Case reader.NodeType
                 Case XmlNodeType.Element 'Mostrar comienzo del elemento.
                     nombreNodo = reader.Name
