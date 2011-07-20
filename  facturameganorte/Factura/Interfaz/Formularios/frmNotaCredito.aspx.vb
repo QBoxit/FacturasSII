@@ -129,6 +129,8 @@ Partial Public Class frmNotaCredito
         Me.textDireccion.Text = String.Empty
         Me.textCondVenta.Text = String.Empty
         Me.textComuna.Text = String.Empty
+        dtDatos.Clear()
+        Me.gvwDatos.DataBind()
     End Sub
 
     Protected Sub imgbtnLimpiar_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles imgbtnLimpiar.Click

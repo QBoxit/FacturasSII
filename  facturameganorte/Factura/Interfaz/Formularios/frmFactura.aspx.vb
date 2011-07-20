@@ -31,7 +31,7 @@ Partial Public Class frmFactura
         txtCantidad.Attributes.Add("onkeypress", "javascript:return ValidNum(event);")
         txtPrecioUnitario.Attributes.Add("onkeypress", "javascript:return ValidNum(event);")
 
-
+        'se guardan datos en secion para el positback de la pagina respecto al los datos del datagridview
         If Session("tb3") Is Nothing Then
             Session("tb3") = dtDatos
         Else
