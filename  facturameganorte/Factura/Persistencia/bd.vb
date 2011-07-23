@@ -83,7 +83,6 @@ Public Class bd
 
     End Function
 
-
     Public Function EjecutarConRetorno(ByVal query As String) As Hashtable
         Dim array As New Hashtable
         Dim dr As Npgsql.NpgsqlDataReader
@@ -139,7 +138,6 @@ Public Class bd
         Return dato
 
     End Function
-
 
     Public Function ObtenerCliente(ByVal query As String) As ArrayList
         Dim array As New ArrayList
@@ -218,6 +216,34 @@ Public Class bd
             MsgBox(ex.ToString)
         End Try
         Return Nothing
+    End Function
+
+    Public Function ObtenerNotaCredito(ByVal query As String) As ArrayList
+        Dim array As New ArrayList
+
+        Dim dr As Npgsql.NpgsqlDataReader
+
+        Try
+
+            Me.Open()
+
+            Dim mydataset As New DataSet
+            Dim command As New NpgsqlCommand(query, conn)
+            dr = command.ExecuteReader()
+            Dim nc As NotaDeCredito
+
+            While dr.Read()
+                nc = New NotaDeCredito(CStr(dr("id")), CStr(dr("fkfactura")), CStr(dr("dia")) + "/" + CStr(dr("mes")) + "/" + CStr(dr("anio")), CStr(dr("iva")), CStr(dr("neto")), CStr(dr("total")))
+                array.Add(nc)
+
+            End While
+            Me.Close()
+            Return array
+        Catch ex As NpgsqlException
+            MsgBox(ex.ToString)
+        End Try
+        Return Nothing
+
     End Function
 
     Public Function ObtenerLcMes(ByVal query As String) As ArrayList
@@ -346,5 +372,8 @@ Public Class bd
         End Try
 
     End Sub
+
+  
+
 
 End Class
