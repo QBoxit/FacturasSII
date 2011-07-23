@@ -402,6 +402,12 @@ Public Class ControladorLogica
         array = CP.ObtenerItemFactura(numeroFactura)
         Return array
     End Function
+    Public Function ObtenerItemNC(ByVal numeroNC As String) As ArrayList
+        Dim array As New ArrayList
+        array = CP.ObtenerItemNC(numeroNC)
+        Return array
+    End Function
+
 
     Public Function ObtenerLcMes(ByVal mes As String, ByVal anio As String) As ArrayList
 
@@ -425,6 +431,17 @@ Public Class ControladorLogica
         Return array
     End Function
 
+    Public Function ObtenerNotaCreditoMesAnio(ByVal mes As String, ByVal anio As String) As ArrayList
+        Dim array As New ArrayList
+        array = CP.ObtenerNotaCreditoMesAnio(mes, anio)
+        Return array
+    End Function
+
+    Public Function ObtenerNotaCredito(ByVal id As String) As ArrayList
+        Dim array As New ArrayList
+        array = CP.ObtenerNotaCredito(id)
+        Return array
+    End Function
     Public Function obtieneIDMax() As Integer
         Dim IdFactura As Integer
         IdFactura = CInt(CP.ObtenerIDFactura())
