@@ -58,7 +58,10 @@
                         <td>
                             </td>
                         <td style="width: 1px">
-                            <strong><span style="text-decoration: underline"></span></strong></td>
+                            </td>
+                        <td style="width: 1px">
+                            <strong><span style="text-decoration: underline">
+                            </span></strong></td>
                     </tr>
                 </table>
                 <table>
@@ -67,6 +70,7 @@
                             <asp:Label ID="errorFaltaDatos" runat="server" Font-Bold="True" Width="672px"></asp:Label></td>
                     </tr>
                 </table>
+                    &nbsp;
                     </asp:Panel>
                 <br />
                 <table style="width: 366px">
@@ -76,6 +80,7 @@
                                 ForeColor="#333333" GridLines="None" Width="739px">
                                 <RowStyle BackColor="#EFF3FB" />
                                 <Columns>
+                                    <asp:BoundField DataField="TIPO" HeaderText="Tipo" />
                                     <asp:BoundField DataField="RUT" HeaderText="Rut" />
                                     <asp:BoundField DataField="NDOCUMENTO" HeaderText="N&#176; Documento" />
                                     <asp:BoundField DataField="RAZONSOCIAL" HeaderText="R.Social" />
