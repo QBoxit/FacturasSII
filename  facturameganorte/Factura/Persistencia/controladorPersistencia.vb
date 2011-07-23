@@ -183,6 +183,15 @@ Public Class controladorPersistencia
         Return array
     End Function
 
+    Public Function ObtenerItemNC(ByVal id As String) As ArrayList
+
+        Dim array As New ArrayList
+        Dim query As String
+        query = "select * from itemnc where fkidnc=" + id + ""
+        array = BD.ObtenerItemFactura(query)
+        Return array
+    End Function
+
     Public Function ObtenerLcMes(ByVal mes As String, ByVal anio As String) As ArrayList
 
         Dim array As New ArrayList
@@ -213,6 +222,21 @@ Public Class controladorPersistencia
         Return array
     End Function
 
+    Public Function ObtenerNotaCreditoMesAnio(ByVal mes As String, ByVal anio As String) As ArrayList
+        Dim array As New ArrayList
+        Dim query As String
+        query = "select * from notacredito where mes='" + mes + "' and anio='" + anio + "'"
+        array = BD.ObtenerNotaCredito(query)
+        Return array
+    End Function
+
+    Public Function ObtenerNotaCredito(ByVal id As String) As ArrayList
+        Dim array As New ArrayList
+        Dim query As String
+        query = "select * from notacredito where id='" + id + "'"
+        array = BD.ObtenerNotaCredito(query)
+        Return array
+    End Function
 
     Public Function ConvertXmlToByte(ByVal Path As String) As Byte()
         Dim sPath As String
