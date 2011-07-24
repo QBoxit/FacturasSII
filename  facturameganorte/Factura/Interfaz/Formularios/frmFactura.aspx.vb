@@ -27,7 +27,6 @@ Partial Public Class frmFactura
 
         'Me.Button1.Attributes.Add("onclick", "return confirm('Are you sure you want to delete?');")
         'Dim dsad As New ClassXML
-        'dsad.creaXml()
         txtCantidad.Attributes.Add("onkeypress", "javascript:return ValidNum(event);")
         txtPrecioUnitario.Attributes.Add("onkeypress", "javascript:return ValidNum(event);")
 

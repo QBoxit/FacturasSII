@@ -194,6 +194,7 @@
     <Compile Include="Logica\factura.vb" />
     <Compile Include="Logica\item.vb" />
     <Compile Include="Logica\libroCompraData.vb" />
+    <Compile Include="Logica\NotaDeCredito.vb" />
     <Compile Include="Logica\persona.vb" />
     <Compile Include="Logica\xmlSignature.vb" />
     <Compile Include="Logica\XML_C14.vb" />
@@ -363,7 +364,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52751</DevelopmentServerPort>
+          <DevelopmentServerPort>60182</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

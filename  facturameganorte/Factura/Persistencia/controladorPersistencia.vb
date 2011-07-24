@@ -60,10 +60,10 @@ Public Class controladorPersistencia
     Public Function ObtenerIDFactura() As String
         Dim query As String
         Dim array As New Hashtable
-        query = "select max(id) maximafactura from factura"
+        query = "select max(id) maxima from factura"
         array = BD.EjecutarConRetorno(query)
-        If BD.obteneridfactura(query) <> "" Then
-            Return BD.obteneridfactura(query)
+        If BD.obtenerid(query) <> "" Then
+            Return BD.obtenerid(query)
         End If
         Return ""
     End Function
@@ -302,4 +302,82 @@ Public Class controladorPersistencia
             MsgBox("ERROR: " & ex.Message)
         End Try
     End Sub
+
+
+    'Metodos para ingresar item de Nota credito
+
+    Public Sub ingresarNotaCredito(ByVal nc As NotaDeCredito, ByVal arrayItem As ArrayList)
+        Dim i As Integer
+        Dim queryNotaCredito As String
+        Dim queryItem As String
+        Dim queryLibroVenta As String
+        Dim numNC As Integer = 0
+        Dim dia As String = nc.Fecha.Chars(0) + nc.Fecha.Chars(1)
+        Dim año As String = nc.Fecha.Chars(6) + nc.Fecha.Chars(7) + nc.Fecha.Chars(8) + nc.Fecha.Chars(9)
+        Dim mes As String = nc.Fecha.Chars(3) + nc.Fecha.Chars(4)
+
+
+
+        queryNotaCredito = "insert into notacredito (fkfactura,dia,mes,anio,iva,neto,total)values(" + nc.Factura + "," + dia + "," + mes + _
+                           "," + año + "," + nc.Iva + "," + nc.Neto + "," + nc.Total + ")"
+        BD.EjecutarSinRetorno(queryNotaCredito)
+
+        'ingresar items de una factura
+        For i = 0 To arrayItem.Count - 1
+            queryItem = "insert into itemnc (coditem,nombre,descripcion,preciounitario,cantidad,fkidnc) " _
+            + "values('" + CStr(DirectCast(arrayItem.Item(i), item).Codigo) + "','" _
+            + CStr(DirectCast(arrayItem.Item(i), item).Item) + "','" + CStr(DirectCast(arrayItem.Item(i), item).Detalle) + _
+            "'," + CStr(DirectCast(arrayItem.Item(i), item).PrecioUnitario) + "," + CStr(DirectCast(arrayItem.Item(i), item).Cantidad) + _
+            "," + nc.Id + ")"
+            BD.EjecutarSinRetorno(queryItem)
+        Next
+
+        If Me.PreguntaLibroVentaNotaCredito(nc) = True Then
+            queryLibroVenta = " update libroventa  set iva= iva - " + nc.Iva + ", neto = neto - " + nc.Neto _
+            + ",total = total - " + nc.Total + " where mes = '" + mes + _
+            "' and anio = '" + año + "'"
+            BD.EjecutarSinRetorno(queryLibroVenta)
+        Else
+            Dim nuevoIva As Integer = CInt(nc.Iva) * -1
+            Dim nuevoNeto As Integer = CInt(nc.Neto) * -1
+            Dim nuevoTotal As Integer = CInt(nc.Total) * -1
+
+            queryLibroVenta = " insert into libroventa (mes,anio,iva,neto,total) values('" + mes + "','" + _
+            año + "'," + nuevoIva + "," + _
+            nuevoNeto + "," + nuevoTotal + ")"
+            BD.EjecutarSinRetorno(queryLibroVenta)
+
+        End If
+
+
+    End Sub
+
+    Public Function ObtenerIDNotaCredito() As String
+        Dim query As String
+        Dim array As New Hashtable
+        query = "select max(id) maxima from notacredito"
+        array = BD.EjecutarConRetorno(query)
+        If BD.obtenerid(query) <> "" Then
+            Return BD.obtenerid(query)
+        End If
+        Return ""
+    End Function
+
+   
+    Public Function PreguntaLibroVentaNotaCredito(ByVal nc As NotaDeCredito) As Boolean
+
+        Dim query As String
+        Dim mes As String = nc.Fecha.Chars(3) + nc.Fecha.Chars(4)
+        Dim año As String = nc.Fecha.Chars(6) + nc.Fecha.Chars(7) + nc.Fecha.Chars(8) + nc.Fecha.Chars(9)
+
+        query = "select id from libroventa where mes ='" + mes _
+         + "'" + "and anio='" + año + "'"
+
+        If BD.EjecutarConReturn(query) = True Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
 End Class

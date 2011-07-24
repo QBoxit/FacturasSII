@@ -10,8 +10,7 @@ Partial Public Class frmNotaCredito
     Dim dtDatos As New DataTable
     Dim DataNC As New DataNotaCredito
     Dim CL As New ControladorLogica
-
-
+    Dim fac As factura
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -125,7 +124,6 @@ Partial Public Class frmNotaCredito
         Me.textGuiaDespacho.Text = String.Empty
         Me.textGiro.Text = String.Empty
         Me.textFono.Text = String.Empty
-        Me.textFecha.Text = String.Empty
         Me.textDireccion.Text = String.Empty
         Me.textCondVenta.Text = String.Empty
         Me.textComuna.Text = String.Empty
@@ -149,7 +147,6 @@ Partial Public Class frmNotaCredito
 
         factura = CL.BuscarFactura(Me.textIdFactura.Text)
         If factura.Count > 0 Then
-            Dim fac As factura
             fac = DirectCast(factura.Item(0), factura)
             cliente = CL.retornaCliente(fac.Cliente)
 
@@ -166,7 +163,6 @@ Partial Public Class frmNotaCredito
                 Me.textGuiaDespacho.Text = fac.NguiaDespacho
                 Me.textGiro.Text = cliente.Item(3)
                 Me.textFono.Text = cliente.Item(5)
-                Me.textFecha.Text = fac.Fecha
                 Me.textDireccion.Text = cliente.Item(2)
                 Me.textCondVenta.Text = fac.CondicionVenta
                 Me.textComuna.Text = cliente.Item(6)
@@ -255,6 +251,10 @@ Partial Public Class frmNotaCredito
         Dim Iva As Integer = 0
         Dim Total As Integer = 0.0
         Dim fechaAux As String = ""
+        Dim arrayItemaux As New ArrayList
+        Dim ivaAplicado As Integer = 0
+        
+
 
         Try
             ' Carga De Datos del Destinatario
@@ -269,7 +269,7 @@ Partial Public Class frmNotaCredito
             myRow.Item("Vendedor") = Me.textVendedor.Text
             myRow.Item("OrdenCompra") = Me.txtOrdenCompra.Text
 
-            Fecha = Me.textFecha.Text
+            Fecha = BasicDatePicker1.Text
 
             myRow.Item("FechaDia") = Fecha.Chars(0) + Fecha.Chars(1)
             fechaAux = Fecha.Chars(3) + Fecha.Chars(4)
@@ -297,13 +297,22 @@ Partial Public Class frmNotaCredito
                         myFila.Item("TotalItem") = TotalPorItem
                         DataNC.DataTableItem.Rows.Add(myFila)
 
+                        Dim nuevoItem As New item(filaGrid.Cells(0).Text, filaGrid.Cells(1).Text, filaGrid.Cells(2).Text, filaGrid.Cells(3).Text, filaGrid.Cells(4).Text)
+                        arrayItemaux.Add(nuevoItem)
                     End If
-
                 Next fila
             End With
+            
 
+            Dim FacturaList As ArrayList = CL.BuscarFactura(Me.textIdFactura.Text)
+            Dim FacturaAux As factura = DirectCast(FacturaList.Item(0), factura)
+
+            ivaAplicado = (CDbl(FacturaAux.Iva) * 100) / CDbl(FacturaAux.Total)
             Neto = Total / (CDbl(0.19) + 1)
             Iva = Total - Neto
+
+            Dim NotaCredito As New NotaDeCredito(CInt(CL.ObtenerIDNotaCredito()) + 1, FacturaAux.NumeroFactura, Fecha, Iva, Neto, Total)
+            CL.ingresarNotaCredito(NotaCredito, arrayItemaux)
 
             myRow.Item("Neto") = Neto
             myRow.Item("Iva") = Iva
@@ -319,4 +328,7 @@ Partial Public Class frmNotaCredito
     End Function
 
 
+    Protected Sub imgbtnGuardar_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles imgbtnGuardar.Click
+
+    End Sub
 End Class
