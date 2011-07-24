@@ -270,14 +270,6 @@ Control ImageButton1.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.ImageButton2">
-	<summary>
-Control ImageButton2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:Factura.frmLibroCompra.lblivaMes">
 	<summary>
 Control lblivaMes.
@@ -652,9 +644,9 @@ Control lblcondicion.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmFactura.DropCondVenta">
+</member><member name="F:Factura.frmFactura.TxtCondVenta">
 	<summary>
-Control DropCondVenta.
+Control TxtCondVenta.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -1115,14 +1107,6 @@ Para modificar, mueva la declaración del campo del archivo del diseñador al ar
 </member><member name="F:Factura.frmLibroVenta.btnVerMesLV">
 	<summary>
 Control btnVerMesLV.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.EnviarLCmes">
-	<summary>
-Control EnviarLCmes.
 </summary>
 	<remarks>
 Campo generado automáticamente.
