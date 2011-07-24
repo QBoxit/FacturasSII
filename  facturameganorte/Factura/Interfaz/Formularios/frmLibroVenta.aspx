@@ -33,7 +33,7 @@
                             <asp:ImageButton ID="btnVerMesLV" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_visualizar.png" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="EnviarLCmes" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_EnviarSII.png" /></td>
+                            </td>
                         <td style="width: 1px">
                             <strong><span style="text-decoration: underline"></span></strong></td>
                     </tr>

@@ -167,8 +167,7 @@
                             <td style="width: 1px; text-align: right">
                                 <asp:Label ID="lblcondicion" runat="server" Text="Condición Venta" Width="104px"></asp:Label></td>
                             <td style="width: 3px">
-                                <asp:DropDownList ID="DropCondVenta" runat="server" Width="80px" Font-Bold="True">
-                                </asp:DropDownList></td>
+                                <asp:TextBox ID="TxtCondVenta" runat="server" Width="240px"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td style="width: 21px">

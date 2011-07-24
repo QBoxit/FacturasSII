@@ -338,14 +338,19 @@ Public Class controladorPersistencia
             "' and anio = '" + año + "'"
             BD.EjecutarSinRetorno(queryLibroVenta)
         Else
-            Dim nuevoIva As Integer = CInt(nc.Iva) * -1
-            Dim nuevoNeto As Integer = CInt(nc.Neto) * -1
-            Dim nuevoTotal As Integer = CInt(nc.Total) * -1
+            Try
+                Dim nuevoIva As String = CDbl(nc.Iva) * -1
+                Dim nuevoNeto As String = CDbl(nc.Neto) * -1
+                Dim nuevoTotal As String = CDbl(nc.Total) * -1
 
-            queryLibroVenta = " insert into libroventa (mes,anio,iva,neto,total) values('" + mes + "','" + _
-            año + "'," + nuevoIva + "," + _
-            nuevoNeto + "," + nuevoTotal + ")"
-            BD.EjecutarSinRetorno(queryLibroVenta)
+                queryLibroVenta = " insert into libroventa (mes,anio,iva,neto,total) values('" + mes + "','" + _
+                año + "'," + nuevoIva + "," + _
+                nuevoNeto + "," + nuevoTotal + ")"
+                BD.EjecutarSinRetorno(queryLibroVenta)
+
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
 
         End If
 
@@ -380,4 +385,11 @@ Public Class controladorPersistencia
         End If
     End Function
 
+    Public Function obtieneValorLibroVenta(ByVal mes As String, ByVal año As String) As ArrayList
+        Dim query As String
+        query = "select iva,neto,total from libroventa where mes ='" + mes _
+                + "'" + "and anio='" + año + "'"
+        Return BD.obtieneValorLibroVentaBD(query)
+
+    End Function
 End Class

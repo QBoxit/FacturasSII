@@ -82,10 +82,6 @@ Partial Public Class frmLibroVenta
                     drDatos.Item("IVA") = CInt(fact.Iva).ToString("C", nfi)
                     drDatos.Item("NETO") = CInt(fact.Neto).ToString("C", nfi)
                     drDatos.Item("TOTAL") = CInt(fact.Total).ToString("C", nfi)
-
-                    ivat += CInt(fact.Iva)
-                    netot += CInt(fact.Neto)
-                    totalt += CInt(fact.Total)
                     ' MsgBox(ivat + " " + netot + " " + totalt)
 
                     dtDatos.Rows.Add(drDatos)
@@ -94,9 +90,7 @@ Partial Public Class frmLibroVenta
                     Me.gvLV.DataBind()
 
                 Next i
-
             Catch ex As Exception
-
             End Try
             errorFaltaDatos.Text = ""
         Else
@@ -110,11 +104,14 @@ Partial Public Class frmLibroVenta
             Me.gvLV.DataSource = Me.dtDatos
             Me.gvLV.DataBind()
         End If
-
-        Me.lblivaMes.Text = ivat.ToString("C", nfi)
-        Me.lblnetoMes.Text = netot.ToString("C", nfi)
-        Me.lbltotalMes.Text = totalt.ToString("C", nfi)
-
+        Try
+            Dim arrayLV As ArrayList = CL.obtieneValorLibroVenta(mes, lblAnio.Text)
+            Me.lblivaMes.Text = arrayLV.Item(0).ToString
+            Me.lblnetoMes.Text = arrayLV.Item(1).ToString
+            Me.lbltotalMes.Text = arrayLV.Item(2).ToString
+        Catch
+            MsgBox("Libro de Venta Aun no ha sido Creado,intente con otro mes")
+        End Try
     End Sub
 
     Protected Sub btnVerMesLV_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs)

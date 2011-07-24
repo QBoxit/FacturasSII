@@ -253,12 +253,13 @@ Partial Public Class frmNotaCredito
         Dim fechaAux As String = ""
         Dim arrayItemaux As New ArrayList
         Dim ivaAplicado As Integer = 0
+        Dim numeroNC As Integer = CInt(CL.ObtenerIDNotaCredito()) + 1
         
 
 
         Try
             ' Carga De Datos del Destinatario
-            myRow.Item("NumeroNC") = "NUMERO PRUEBA"
+            myRow.Item("NumeroNC") = numeroNC
             myRow.Item("Nombre") = Me.TextRazonSocial.Text
             myRow.Item("Direccion") = Me.textDireccion.Text
             myRow.Item("Giro") = Me.textGiro.Text
@@ -308,10 +309,11 @@ Partial Public Class frmNotaCredito
             Dim FacturaAux As factura = DirectCast(FacturaList.Item(0), factura)
 
             ivaAplicado = (CDbl(FacturaAux.Iva) * 100) / CDbl(FacturaAux.Total)
-            Neto = Total / (CDbl(0.19) + 1)
-            Iva = Total - Neto
+            Iva = Total * (ivaAplicado / 100)
+            Neto = Total - Iva
 
-            Dim NotaCredito As New NotaDeCredito(CInt(CL.ObtenerIDNotaCredito()) + 1, FacturaAux.NumeroFactura, Fecha, Iva, Neto, Total)
+
+            Dim NotaCredito As New NotaDeCredito(numeroNC, FacturaAux.NumeroFactura, Fecha, Iva, Neto, Total)
             CL.ingresarNotaCredito(NotaCredito, arrayItemaux)
 
             myRow.Item("Neto") = Neto

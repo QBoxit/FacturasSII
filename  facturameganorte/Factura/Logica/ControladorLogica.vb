@@ -456,7 +456,9 @@ Public Class ControladorLogica
         Return IdFactura
     End Function
 
-
+    Public Function obtieneValorLibroVenta(ByVal mes As String, ByVal año As String) As ArrayList
+        Return CP.obtieneValorLibroVenta(mes, año)
+    End Function
 
     'METODOS PARA AUTENTIFICACION AUTOMATICA SII
     Public Sub AutentificacionAutomatica()

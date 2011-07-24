@@ -202,15 +202,6 @@ Partial Public Class frmLibroCompra
     Protected WithEvents ImageButton1 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''Control ImageButton2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ImageButton2 As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
     '''Control lblivaMes.
     '''</summary>
     '''<remarks>

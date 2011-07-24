@@ -51,11 +51,8 @@ Partial Public Class frmFactura
             End Try
 
         End If
-        Me.DropCondVenta.Items.Clear()
+
         Me.DropIva.Items.Clear()
-        Me.DropCondVenta.Items.Add("Efectivo")
-        Me.DropCondVenta.Items.Add("Cheque")
-        Me.DropCondVenta.Items.Add("Otros")
         Me.DropIva.Items.Add("0,19")
         Me.DropIva.Items.Add("0,18")
         Me.DropIva.Items.Add("0,20")
@@ -95,7 +92,7 @@ Partial Public Class frmFactura
                 myRow.Item("ColumnNumeroFactura") = CL.obtieneIDMax()
                 myRow.Item("ColumnGuiaDespacho") = Me.TextGuiaDespacho.Text
                 myRow.Item("ColumnOrdenCompra") = Me.TextOrdenCompra.Text
-                myRow.Item("ColumnCondVenta") = Me.DropCondVenta.Text
+                myRow.Item("ColumnCondVenta") = Me.TxtCondVenta.Text
                 myRow.Item("ColumnTelefono") = Me.txtFono.Text
                 myRow.Item("ColumnVendedor") = Me.TextVendedor.Text
                 Fecha = txtfecha.Text
@@ -103,7 +100,7 @@ Partial Public Class frmFactura
                 myRow.Item("ColumnDia") = Fecha.Chars(0) + Fecha.Chars(1)
                 fechaAux = Fecha.Chars(3) + Fecha.Chars(4)
                 myRow.Item("ColumnMes") = CL.convierteMes(fechaAux)
-                'myRow.Item("ColumnAño") = Fecha.Chars(6) + Fecha.Chars(7) + Fecha.Chars(8) + Fecha.Chars(9)
+                myRow.Item("ColumnAño") = Fecha.Chars(6) + Fecha.Chars(7) + Fecha.Chars(8) + Fecha.Chars(9)
 
                 'Carga De Datos de Items - Factura
 
@@ -244,7 +241,7 @@ Partial Public Class frmFactura
             Me.txtFono.Text = String.Empty
             Me.txtGiro.Text = String.Empty
             Me.txtItem.Text = String.Empty
-
+            Me.TxtCondVenta.Text = String.Empty
             Me.txtPrecioUnitario.Text = String.Empty
             Me.txtRut.Text = String.Empty
 
@@ -281,7 +278,7 @@ Partial Public Class frmFactura
 
             ' validar parametros nulos al crear la factura.
             Dim fact As factura = New factura(Me.TextVendedor.Text, Me.txtRut.Text, Me.TextOrdenCompra.Text, Me.TextGuiaDespacho.Text _
-             , Me.DropCondVenta.Text.ToString, Me.txtfecha.Text, 0, 0, 0, Me.personaFactura)
+             , Me.TxtCondVenta.Text.ToString, Me.txtfecha.Text, 0, 0, 0, Me.personaFactura)
 
 
             For i = 0 To Me.gvwDatos.Rows.Count - 1
@@ -302,9 +299,8 @@ Partial Public Class frmFactura
 
             Next
 
-            'ARREGLAR
-            Neto = Total / (CDbl(Me.DropIva.Text) + 1)
-            Iva = Total - Neto
+            Iva = Total * (CDbl(Me.DropIva.Text))
+            Neto = Total - Iva
 
             fact.Neto = Neto
             fact.Iva = Iva

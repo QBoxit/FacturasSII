@@ -382,13 +382,13 @@ Partial Public Class frmFactura
     Protected WithEvents lblcondicion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control DropCondVenta.
+    '''Control TxtCondVenta.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents DropCondVenta As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents TxtCondVenta As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label1.

@@ -372,7 +372,31 @@ Public Class bd
 
     End Sub
 
-  
+    Public Function obtieneValorLibroVentaBD(ByVal query As String) As ArrayList
+        Dim array As New ArrayList
+        Dim dr As Npgsql.NpgsqlDataReader
+
+        Try
+            Me.Open()
+            Dim mydataset As New DataSet
+            Dim command As New NpgsqlCommand(query, conn)
+            dr = command.ExecuteReader()
+
+            While dr.Read()
+                array.Add(CStr(dr("iva")))
+                array.Add(CStr(dr("neto")))
+                array.Add(CStr(dr("total")))
+            End While
+            Me.Close()
+            Return array
+        Catch ex As NpgsqlException
+            MsgBox(ex.ToString)
+        End Try
+        Return Nothing
+    End Function
+
+
+
 
 
 End Class
