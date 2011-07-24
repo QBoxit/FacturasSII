@@ -392,6 +392,14 @@ Public Class ControladorLogica
         CP.IngresarFactura(fact, array)
     End Sub
 
+    Public Sub ingresarNotaCredito(ByVal nc As NotaDeCredito, ByVal arrayItem As ArrayList)
+        CP.ingresarNotaCredito(nc, arrayItem)
+    End Sub
+
+
+    Public Function ObtenerIDNotaCredito() As String
+        Return CP.ObtenerIDNotaCredito()
+    End Function
 
     Public Sub ingresarItemLibroVentas(ByVal ItemLibroVenta As libroCompraData)
         CP.ingresarItemLibroVentas(ItemLibroVenta)
@@ -534,8 +542,6 @@ Public Class ControladorLogica
         Dim StrHash As String = Convert.ToBase64String(bytHash)
         Return StrHash
     End Function
-
-
 
 
 

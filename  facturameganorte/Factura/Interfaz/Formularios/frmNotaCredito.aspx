@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/Interfaz/Formularios/Principal.Master" CodeBehind="frmNotaCredito.aspx.vb" Inherits="Factura.frmNotaCredito" 
     title="MEGANORTE - Nota De Credito" %>
+
+<%@ Register Assembly="BasicFrame.WebControls.BasicDatePicker" Namespace="BasicFrame.WebControls"
+    TagPrefix="BDP" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width: 688px; height: 256px">
         <tr>
@@ -54,7 +57,10 @@
                             <td style="width: 91px; text-align: left">
                 <asp:Label ID="lblFecha" runat="server" Text="Fecha:"></asp:Label></td>
                             <td style="width: 307px">
-                <asp:TextBox ID="textFecha" runat="server" Width="300px" Font-Bold="True" ReadOnly="True"></asp:TextBox></td>
+                                <BDP:BasicDatePicker ID="BasicDatePicker1" runat="server" DateFormat="dd/MM/yyyy"
+                                    ReadOnly="True">
+                                </BDP:BasicDatePicker>
+                            </td>
                             <td style="width: 102px">
                 <asp:Label ID="lblPrecioUnitario" runat="server" Text="Razon Social :" Width="96px"></asp:Label></td>
                             <td style="width: 309px">

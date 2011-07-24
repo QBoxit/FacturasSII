@@ -72,7 +72,6 @@ Partial Public Class frmDocumentosEmitidos
 
                     Dim drDatos As DataRow = dtDatos.NewRow
                     Dim fact As factura
-
                     fact = DirectCast(factura.Item(i), factura)
                     cliente = CL.retornaCliente(fact.Cliente)
                     drDatos.Item("TIPO") = "Factura"
@@ -83,8 +82,6 @@ Partial Public Class frmDocumentosEmitidos
                     drDatos.Item("IVA") = CInt(fact.Iva).ToString("C", nfi)
                     drDatos.Item("NETO") = CInt(fact.Neto).ToString("C", nfi)
                     drDatos.Item("TOTAL") = CInt(fact.Total).ToString("C", nfi)
-
-
 
                     dtDatos.Rows.Add(drDatos)
 

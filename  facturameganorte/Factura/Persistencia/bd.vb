@@ -5,7 +5,7 @@ Public Class bd
 
     Private conn As NpgsqlConnection
 
-    Private stringConnection As String = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=1a2b3c;Database=facturacion;"
+    Private stringConnection As String = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=golden;Database=facturacion;"
 
 
     Public Sub New()
@@ -112,7 +112,7 @@ Public Class bd
 
     End Function
 
-    Public Function obteneridfactura(ByVal query As String) As String
+    Public Function obtenerid(ByVal query As String) As String
         Dim dato As String = ""
         Dim dr As Npgsql.NpgsqlDataReader
         Try
@@ -125,7 +125,7 @@ Public Class bd
             Dim i As Integer
             While dr.Read()
                 For i = 0 To dr.FieldCount - 1
-                    dato = CStr(dr("maximafactura"))
+                    dato = CStr(dr("maxima"))
                 Next i
             End While
 
@@ -177,7 +177,6 @@ Public Class bd
         Try
 
             Me.Open()
-
             Dim mydataset As New DataSet
             Dim command As New NpgsqlCommand(query, conn)
             dr = command.ExecuteReader()

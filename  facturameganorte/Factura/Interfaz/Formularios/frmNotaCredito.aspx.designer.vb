@@ -193,13 +193,13 @@ Partial Public Class frmNotaCredito
     Protected WithEvents lblFecha As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control textFecha.
+    '''Control BasicDatePicker1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents textFecha As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents BasicDatePicker1 As Global.BasicFrame.WebControls.BasicDatePicker
 
     '''<summary>
     '''Control lblPrecioUnitario.
