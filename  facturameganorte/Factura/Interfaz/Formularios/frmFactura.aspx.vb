@@ -19,9 +19,9 @@ Partial Public Class frmFactura
     Dim res As Integer
     Dim DataFactura As New DataSetFactura
     Dim personaFactura As New persona("", "", "", "", "", "", "")
+    Dim intGRID As Integer = 1
 
-    Public Event RowDeleting As GridViewDeleteEventHandler
-    Public Event rowUpdate As GridViewUpdatedEventHandler
+   
 
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load, Me.Load
 
@@ -35,6 +35,7 @@ Partial Public Class frmFactura
             Session("tb3") = dtDatos
         Else
             dtDatos = DirectCast(Session("tb3"), DataTable)
+
         End If
         If Not Page.IsPostBack Then
             Try
@@ -43,9 +44,9 @@ Partial Public Class frmFactura
                 dtDatos.Columns.Add(New DataColumn("DETALLE"))
                 dtDatos.Columns.Add(New DataColumn("CANTIDAD"))
                 dtDatos.Columns.Add(New DataColumn("PRECIOUNITARIO"))
-                Me.gvwDatos.DataSource = dtDatos
+
                 Me.gvwDatos.DataBind()
-                Me.dataset.Tables.Add(dtDatos)
+                Me.gvwDatos.DataSource = Me.dtDatos
          
             Catch
             End Try
@@ -57,6 +58,15 @@ Partial Public Class frmFactura
         Me.DropIva.Items.Add("0,18")
         Me.DropIva.Items.Add("0,20")
 
+        Me.gvwDatos.DataBind()
+        Me.gvwDatos.DataSource = Me.dtDatos
+
+    End Sub
+
+    Protected Sub SampleGridView_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvwDatos.RowDataBound
+
+        e.Row.ID = "EliminarDataGrid" & CStr(intGRID)
+        intGRID += 1
 
     End Sub
 
@@ -95,6 +105,7 @@ Partial Public Class frmFactura
                 myRow.Item("ColumnCondVenta") = Me.TxtCondVenta.Text
                 myRow.Item("ColumnTelefono") = Me.txtFono.Text
                 myRow.Item("ColumnVendedor") = Me.TextVendedor.Text
+                myRow.Item("Fcedible") = "DOCUMENTO ORIGINAL"
                 Fecha = txtfecha.Text
 
                 myRow.Item("ColumnDia") = Fecha.Chars(0) + Fecha.Chars(1)
@@ -340,10 +351,13 @@ Partial Public Class frmFactura
 
                 Me.gvwDatos.DataSource = dtDatos
                 Me.gvwDatos.DataBind()
-                Me.Limpiar()
 
+
+                Me.Limpiar()
+                Me.ingresado.ForeColor = Drawing.Color.Blue
                 Me.ingresado.Text = "Los datos han sido Ingresados correctamentes."
             Else
+                Me.ingresado.ForeColor = Drawing.Color.Red
                 Me.ingresado.Text = "Complete todos los datos."
 
 
@@ -352,24 +366,8 @@ Partial Public Class frmFactura
         Catch ex As Exception
 
         End Try
-    End Sub
-
-
-
-    Protected Sub gvwDatos_RowDeleting(ByVal sender As System.Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles gvwDatos.RowDeleting
-        'Try
-        '    Dim dato As Integer = Me.gvwDatos.DataKeys(e.RowIndex).Value()
-        '    Me.gvwDatos.DeleteRow(dato)
-        '    Me.gvwDatos.DataSource = dtDatos
-        'Catch
-        'End Try
 
     End Sub
-   
-    Protected Sub gvwDatos_RowEditing(ByVal sender As System.Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles gvwDatos.RowEditing
-
-    End Sub
-
 
     Protected Sub txtCantidad_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCantidad.TextChanged
         If Not IsNumeric(txtCantidad.Text) Then
@@ -519,5 +517,42 @@ Partial Public Class frmFactura
 
     Protected Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         CL.AutentificacionAutomatica()
+    End Sub
+    Protected Sub Eliminar_Click(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvwDatos.RowCommand
+
+        If (e.CommandName = "EliminarData") Then
+
+            Dim ced As Boolean = False
+            Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+            MsgBox(index)
+            Dim item, codigo, detalle, cantidad, precioUni As String
+            Dim row As GridViewRow
+            Dim i As Integer
+            dtDatos.Clear()
+
+
+            For i = 0 To Me.gvwDatos.Rows.Count - 1
+                row = Me.gvwDatos.Rows(i)
+                If i <> index Then
+                    item = row.Cells(0).Text
+                    codigo = row.Cells(1).Text
+                    detalle = row.Cells(2).Text
+                    cantidad = row.Cells(3).Text
+                    precioUni = row.Cells(4).Text
+
+                    Dim drDatos As DataRow = dtDatos.NewRow
+
+                    drDatos.Item("ITEM") = item
+                    drDatos.Item("CODIGO") = codigo
+                    drDatos.Item("DETALLE") = detalle
+                    drDatos.Item("CANTIDAD") = cantidad
+                    drDatos.Item("PRECIOUNITARIO") = precioUni
+
+                    dtDatos.Rows.Add(drDatos)
+                End If
+            Next
+            Me.gvwDatos.DataSource = dtDatos
+            Me.gvwDatos.DataBind()
+        End If
     End Sub
 End Class

@@ -209,36 +209,7 @@ Partial Public Class frmNotaCredito
         End Try
     End Sub
 
-    Protected Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-
-        Dim atLeastOneRowDeleted As Boolean = False
-
-        ' Iterate through the Products.Rows property
-        For Each row As GridViewRow In Me.gvwDatos.Rows
-
-            ' Access the CheckBox
-            Dim cb As CheckBox = row.FindControl("itemSelector")
-            If cb IsNot Nothing AndAlso cb.Checked Then
-                ' Delete row! (Well, not really...)
-                atLeastOneRowDeleted = True
-
-                ' First, get the ProductID for the selected row
-                Dim productID As Integer = Convert.ToInt32(gvwDatos.DataKeys(row.RowIndex - 1).Value)
-
-                ' "Delete" the row
-                avisoNT.Text &= String.Format("This would have deleted ProductID {0}<br />", productID)
-
-                '... To actually delete the product, use ...
-                ' Dim productAPI As New ProductsBLL
-                ' productAPI.DeleteProduct(productID)
-                '............................................
-            End If
-        Next
-
-        ' Show the Label if at least one row was deleted...
-        avisoNT.Visible = atLeastOneRowDeleted
-
-    End Sub
+  
 
     Function CargarNotaCredito() As Boolean
 
@@ -269,6 +240,7 @@ Partial Public Class frmNotaCredito
             myRow.Item("FacturaNum") = Me.textIdFactura.Text
             myRow.Item("Vendedor") = Me.textVendedor.Text
             myRow.Item("OrdenCompra") = Me.txtOrdenCompra.Text
+            myRow.Item("Ncedible") = "DOCUMENTO ORIGINAL"
 
             Fecha = BasicDatePicker1.Text
 
