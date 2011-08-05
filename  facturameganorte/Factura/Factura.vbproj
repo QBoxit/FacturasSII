@@ -273,6 +273,7 @@
     <Content Include="Interfaz\Imagenes\btn_saveFactura.png" />
     <Content Include="Interfaz\Imagenes\btn_ver.png" />
     <Content Include="Interfaz\Imagenes\btn_visualizar.png" />
+    <Content Include="Interfaz\Imagenes\eliminar.png" />
     <Content Include="Interfaz\Imagenes\pdf.png" />
     <Content Include="Interfaz\Imagenes\SmallCalendar.png" />
     <Content Include="Script\jquery-1.6.1.min.js" />
