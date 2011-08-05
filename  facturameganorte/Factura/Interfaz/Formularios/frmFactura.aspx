@@ -42,7 +42,7 @@
                 <asp:Label ID="lblRut" runat="server" Text="R.U.T. :"></asp:Label>
                             </td>
                             <td style="text-align: left">
-                <asp:TextBox ID="txtRut" runat="server" Width="301px" TabIndex="5" Font-Bold="True" AutoPostBack ></asp:TextBox></td>
+                <asp:TextBox ID="txtRut" runat="server" Width="301px" TabIndex="5" Font-Bold="True" AutoPostBack="True" ></asp:TextBox></td>
                             <td style="width: 44px; text-align: left;">
                 <asp:Label ID="lblFono" runat="server" Text="Fono:"></asp:Label></td>
                             <td style="text-align: left">
@@ -84,7 +84,7 @@
                     style="width: 143px">
                     <tr>
                         <td style="height: 26px">
-                            &nbsp;<asp:ImageButton ID="aduser" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_ingresar.png" />
+                            <asp:ImageButton ID="aduser" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_ingresar.png" />
                         </td>
                         <td style="width: 624px; height: 26px">
                             <asp:ImageButton ID="btnlimpiar" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_limpiar.png" />
@@ -164,7 +164,7 @@
                 <asp:Label ID="lblPrecioUnitario" runat="server" Text="Precio Unitario:" Width="96px"></asp:Label></td>
                             <td style="width: 303px">
                 <asp:TextBox ID="txtPrecioUnitario" runat="server" TabIndex="13" Width="300px" Font-Bold="True"></asp:TextBox></td>
-                            <td style="width: 1px; text-align: right">
+                            <td style="width: 1px; text-align: left">
                                 <asp:Label ID="lblcondicion" runat="server" Text="Condición Venta" Width="104px"></asp:Label></td>
                             <td style="width: 3px">
                                 <asp:TextBox ID="TxtCondVenta" runat="server" Width="240px"></asp:TextBox></td>
@@ -174,9 +174,9 @@
                             </td>
                             <td style="width: 303px">
                             </td>
-                            <td style="width: 1px; text-align: right">
-                                <asp:Label ID="Label1" runat="server" Text="Iva" Width="38px"></asp:Label></td>
-                            <td style="width: 3px">
+                            <td style="width: 1px; text-align: left">
+                                <asp:Label ID="Label1" runat="server" Text="Iva" Width="16px"></asp:Label></td>
+                            <td style="width: 3px; text-align: left;">
                                 <asp:DropDownList ID="DropIva" runat="server" Font-Bold="True" Width="80px">
                                 </asp:DropDownList></td>
                         </tr>
@@ -187,7 +187,7 @@
                     <table>
                         <tr>
                             <td>
-                <asp:ImageButton ID="imgbtnAgregar" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_agregar.png" Width="101px" Height="31px" /></td>
+                <asp:ImageButton ID="imgbtnAgregar"  runat="server" ImageUrl="~/Interfaz/Imagenes/btn_agregar.png" Width="101px" Height="31px" /></td>
                             <td>
                             <asp:Label ID="ingresado" runat="server" BackColor="Transparent" BorderColor="Black" ForeColor="Red" Height="21px" Width="653px"></asp:Label></td>
                         </tr>
@@ -234,24 +234,41 @@
             <td align="center" colspan="2" valign="middle">
                 &nbsp; &nbsp;&nbsp;
                 &nbsp;&nbsp;
-                <asp:GridView ID="gvwDatos" datakeynames="ITEM" runat="server" CellPadding="4" ForeColor="#333333"
-                    GridLines="None" AutoGenerateColumns="False" Width="784px" >
-                    <RowStyle BackColor="#EFF3FB" />
+                <asp:GridView ID="gvwDatos" runat="server" AutoGenerateColumns="False" CellPadding="4"
+                                ForeColor="#333333" GridLines="None" Width="760px">
+                                <RowStyle BackColor="#EFF3FB" />
                     <Columns>
-                        <asp:BoundField DataField="ITEM" HeaderText="Item" />
-                        <asp:BoundField DataField="CODIGO" HeaderText="C&#243;digo" />
-                        <asp:BoundField DataField="DETALLE" HeaderText="Detalle" />
-                        <asp:BoundField DataField="CANTIDAD" HeaderText="Cantidad" />
-                        <asp:BoundField DataField="PRECIOUNITARIO" HeaderText="Precio Unitario" />
-                        <asp:CommandField ButtonType="Button" DeleteText="Eliminar" EditText="Editar" ShowDeleteButton="True"
-                            ShowEditButton="True" />
+                        <asp:BoundField DataField="ITEM" HeaderText="Item" >
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="CODIGO" HeaderText="C&#243;digo" >
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="DETALLE" HeaderText="Detalle" >
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="CANTIDAD" HeaderText="Cantidad" >
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="PRECIOUNITARIO" HeaderText="Precio Unitario" >
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                 <asp:ImageButton ID="EliminarDataGrid" runat="server" 
+                                   CommandName="EliminarData" 
+                                   CommandArgument="<%# CType(Container,GridViewRow).RowIndex %>"
+                                   ImageUrl="~/Interfaz/Imagenes/eliminar.png" Height="24px" Width="24px"  />                            
+                            </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <AlternatingRowStyle BackColor="White" />
+                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                <EditRowStyle BackColor="#2461BF" />
+                                <AlternatingRowStyle BackColor="White" />
                 </asp:GridView>
                 &nbsp;
             </td>

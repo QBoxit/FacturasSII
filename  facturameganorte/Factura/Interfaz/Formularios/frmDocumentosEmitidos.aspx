@@ -4,11 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table >
     <tr>
-        <td style="width: 728px; height: 9px">
+        <td style="width: 766px; height: 9px">
             <strong>DOCUMENTOS EMITIDOS.</strong></td>
     </tr>
         <tr>
-            <td style="width: 728px; height: 10px;">
+            <td style="width: 766px; height: 10px;">
                 <asp:Panel ID="Panel1" runat="server" BorderStyle="Double">
                 <table style="width: 423px">
                     <tr>
@@ -70,14 +70,14 @@
                             <asp:Label ID="errorFaltaDatos" runat="server" Font-Bold="True" Width="672px"></asp:Label></td>
                     </tr>
                 </table>
-                    &nbsp;
+                    &nbsp;&nbsp;
                     </asp:Panel>
-                <br />
+                &nbsp;&nbsp; &nbsp;<br />
                 <table style="width: 366px">
                     <tr>
-                        <td>
+                        <td style="width: 773px">
                             <asp:GridView ID="gvLV" runat="server" AutoGenerateColumns="False" CellPadding="4"
-                                ForeColor="#333333" GridLines="None" Width="739px">
+                                ForeColor="#333333" GridLines="None" Width="760px">
                                 <RowStyle BackColor="#EFF3FB" />
                                 <Columns>
                                     <asp:BoundField DataField="TIPO" HeaderText="Tipo" />
@@ -94,7 +94,7 @@
                                     <asp:BoundField DataField="TOTAL" DataFormatString="{0:c}" HeaderText="Total" >
                                         <ItemStyle Font-Bold="True" HorizontalAlign="Left" VerticalAlign="Middle" />
                                     </asp:BoundField>
-                                    <asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Fact">
   <ItemTemplate>
     <asp:ImageButton ID="VerPdf" runat="server" 
       CommandName="VerPdfButton" 
@@ -102,6 +102,14 @@
       ImageUrl="~/Interfaz/Imagenes/pdf.png"  />
   </ItemTemplate> 
 </asp:TemplateField>                                
+                                    <asp:TemplateField HeaderText="Cedible">
+                                        <ItemTemplate>
+                                            <asp:ImageButton ID="VerCedible" runat="server" 
+      CommandName="VerPdfCedibleButton" 
+      CommandArgument="<%# CType(Container,GridViewRow).RowIndex %>"
+      ImageUrl="~/Interfaz/Imagenes/pdf.png"  />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                  </Columns>
                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
@@ -110,6 +118,14 @@
                                 <EditRowStyle BackColor="#2461BF" />
                                 <AlternatingRowStyle BackColor="White" />
                             </asp:GridView>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
                         </td>
                     </tr>
                 </table>

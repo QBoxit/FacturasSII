@@ -17,7 +17,7 @@
                             <td style="width: 91px; text-align: left">
                 <asp:Label ID="lblRazon" runat="server" Text="Factura" Width="38px"></asp:Label></td>
                             <td style="width: 307px">
-                <asp:TextBox ID="textIdFactura" runat="server" Width="297px" AutoPostBack Font-Bold="True" ></asp:TextBox></td>
+                <asp:TextBox ID="textIdFactura" runat="server" Width="297px" AutoPostBack="True"  Font-Bold="True" ></asp:TextBox></td>
                             <td style="width: 102px">
                 <asp:Label ID="lblFono" runat="server" Text="Fono:"></asp:Label></td>
                             <td style="width: 309px">
@@ -57,8 +57,8 @@
                             <td style="width: 91px; text-align: left">
                 <asp:Label ID="lblFecha" runat="server" Text="Fecha:"></asp:Label></td>
                             <td style="width: 307px">
-                                <BDP:BasicDatePicker ID="BasicDatePicker1" runat="server" DateFormat="dd/MM/yyyy"
-                                    ReadOnly="True">
+                                &nbsp;<BDP:BasicDatePicker ID="BasicDatePicker1" runat="server" DateFormat="dd-MM-yyyy"
+                                    Width="232px">
                                 </BDP:BasicDatePicker>
                             </td>
                             <td style="width: 102px">
@@ -86,7 +86,7 @@
                     </tr>
                     <tr>
                         <td style="height: 26px">
-                            <asp:Button ID="Button1" runat="server" Text="Button" Visible="False" /></td>
+                            </td>
                     </tr>
                     <tr>
                         <td style="height: 21px">
