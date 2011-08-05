@@ -318,8 +318,8 @@ Public Class controladorPersistencia
 
 
 
-        queryNotaCredito = "insert into notacredito (fkfactura,dia,mes,anio,iva,neto,total)values(" + nc.Factura + "," + dia + "," + mes + _
-                           "," + año + "," + nc.Iva + "," + nc.Neto + "," + nc.Total + ")"
+        queryNotaCredito = "insert into notacredito (fkfactura,dia,mes,anio,iva,neto,total)values('" + nc.Factura + "','" + dia + "','" + mes + _
+                           "','" + año + "','" + nc.Iva + "','" + nc.Neto + "','" + nc.Total + "')"
         BD.EjecutarSinRetorno(queryNotaCredito)
 
         'ingresar items de una factura

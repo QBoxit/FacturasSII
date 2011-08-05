@@ -5,7 +5,7 @@ Public Class bd
 
     Private conn As NpgsqlConnection
 
-    Private stringConnection As String = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=golden;Database=facturacion;"
+    Private stringConnection As String = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=1a2b3c;Database=facturacion;"
 
 
     Public Sub New()
@@ -196,18 +196,6 @@ Public Class bd
                 )
                 array.Add(fact)
 
-                'array.Add(CStr(dr("id")))
-                'array.Add(CStr(dr("vendedor")))
-                'array.Add(CStr(dr("ordencompra")))
-                'array.Add(CStr(dr("nguiadespacho")))
-                'array.Add(CStr(dr("condicionventa")))
-                'array.Add(CStr(dr("neto")))
-                'array.Add(CStr(dr("total")))
-                'array.Add(CStr(dr("iva")))
-                'array.Add(CStr(dr("fkrutcliente")))
-                'array.Add(CStr(dr("fklibroventa")))
-                'array.Add(CStr(dr("fkhistorialfactura")))
-                'array.Add(CStr(dr("fecha")))
             End While
             Me.Close()
             Return array
