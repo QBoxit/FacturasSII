@@ -38,7 +38,7 @@ Partial Public Class frmDocumentosEmitidos
                 dtDatos.Columns.Add(New DataColumn("IVA"))
                 dtDatos.Columns.Add(New DataColumn("NETO"))
                 dtDatos.Columns.Add(New DataColumn("TOTAL"))
-
+                Me.gvLV.DataBind()
             Catch
             End Try
         End If
@@ -46,6 +46,7 @@ Partial Public Class frmDocumentosEmitidos
         Me.llenarDataGrid()
         Me.gvLV.DataSource = Me.dtDatos
         Me.gvLV.DataBind()
+
     End Sub
     Private Sub llenarDataGrid()
 
@@ -151,23 +152,23 @@ Partial Public Class frmDocumentosEmitidos
 
    
 
-    Private Sub shownotacredito(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal notacredito As NotaDeCredito)
+    Private Sub shownotacredito(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal notacredito As NotaDeCredito, ByVal ced As Boolean)
         Try
-            Me.CargarReporteNotaCredito(p, f, item, notacredito)
+            Me.CargarReporteNotaCredito(p, f, item, notacredito, ced)
             Me.ExportarReporteNotaCredito()
         Catch ex As Exception
             Dim log As Logger = Logger.getInstance
             log.guardarExcepcion(ex)
         End Try
     End Sub
-    Public Sub CargarReporteNotaCredito(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal notacredito As NotaDeCredito)
+    Public Sub CargarReporteNotaCredito(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal notacredito As NotaDeCredito, ByVal ced As Boolean)
         Try
             Dim nc As New NotaCredito
             Dim ds As New DataSet
             Dim dt1 As New DataTable
             Dim oRep As New ReportDocument
             Dim ResultadoCarga As Boolean
-            ResultadoCarga = Me.CargarNotaCredito(p, f, item, notacredito)
+            ResultadoCarga = Me.CargarNotaCredito(p, f, item, notacredito, ced)
 
             If (ResultadoCarga = True) Then
                 nc.SetDataSource(DataNC)
@@ -182,7 +183,7 @@ Partial Public Class frmDocumentosEmitidos
             log.guardarExcepcion(ex)
         End Try
     End Sub
-    Function CargarNotaCredito(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal notacredito As NotaDeCredito) As Boolean
+    Function CargarNotaCredito(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal notacredito As NotaDeCredito, ByVal ced As Boolean) As Boolean
 
         Dim nfi As NumberFormatInfo = New CultureInfo("en-US", False).NumberFormat
         nfi.CurrencyDecimalDigits = 0
@@ -210,6 +211,11 @@ Partial Public Class frmDocumentosEmitidos
             myRow.Item("FacturaNum") = f.NumeroFactura
             myRow.Item("Vendedor") = f.Vendedor
             myRow.Item("OrdenCompra") = f.OrdenDeCompra
+            If ced = True Then
+                myRow.Item("Ncedible") = "CEDIBLE"
+            Else
+                myRow.Item("Ncedible") = "DOCUMENTO ORIGINAL"
+            End If
 
             Fecha = notacredito.Fecha
 
@@ -226,7 +232,7 @@ Partial Public Class frmDocumentosEmitidos
                     dato = DirectCast(.Item(fila), item)
                     myFila = DataNC.DataTableItem.NewRow
                     ' Recorrer la cantidad de columnas que contiene el dataGridView  
-                    MsgBox(dato.Item)
+
                     myFila.Item("Item") = dato.Item
                     myFila.Item("Codigo") = dato.Codigo
                     myFila.Item("Descripcion") = dato.Detalle
@@ -240,7 +246,7 @@ Partial Public Class frmDocumentosEmitidos
                 Next fila
             End With
 
-            
+
 
             myRow.Item("Neto") = notacredito.Neto
             myRow.Item("Iva") = notacredito.Iva
@@ -289,23 +295,23 @@ Partial Public Class frmDocumentosEmitidos
         End Try
     End Sub
 
-    Private Sub showfacture(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList)
+    Private Sub showfacture(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal ced As Boolean)
         Try
-            Me.CargarReporte(p, f, item)
+            Me.CargarReporte(p, f, item, ced)
             Me.ExportarReporte()
         Catch ex As Exception
             Dim log As Logger = Logger.getInstance
             log.guardarExcepcion(ex)
         End Try
     End Sub
-    Public Sub CargarReporte(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList)
+    Public Sub CargarReporte(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal ced As Boolean)
         Try
             Dim reporte As New ReporteFactura
             Dim ds As New DataSet
             Dim dt1 As New DataTable
             Dim oRep As New ReportDocument
             Dim ResultadoCarga As Boolean
-            ResultadoCarga = Me.CargarFactura(p, f, item)
+            ResultadoCarga = Me.CargarFactura(p, f, item, ced)
 
             If (ResultadoCarga = True) Then
                 reporte.SetDataSource(DataFactura)
@@ -320,7 +326,7 @@ Partial Public Class frmDocumentosEmitidos
             log.guardarExcepcion(ex)
         End Try
     End Sub
-    Function CargarFactura(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList) As Boolean
+    Function CargarFactura(ByVal p As persona, ByVal f As factura, ByVal item As ArrayList, ByVal ced As Boolean) As Boolean
 
         Dim nfi As NumberFormatInfo = New CultureInfo("en-US", False).NumberFormat
         nfi.CurrencyDecimalDigits = 0
@@ -331,9 +337,9 @@ Partial Public Class frmDocumentosEmitidos
         Dim myFila As DataRow
         Dim TotalPorItem As Integer = 0.0
         Dim Fecha As String = ""
-        Dim Neto As Integer = 0.0
-        Dim Iva As Integer = 0
-        Dim Total As Integer = 0.0
+        Dim Neto As Integer = CInt(f.Neto)
+        Dim Iva As Integer = CInt(f.Iva)
+        Dim Total As Integer = 0
         Dim fechaAux As String = ""
 
         Try
@@ -350,6 +356,12 @@ Partial Public Class frmDocumentosEmitidos
             myRow.Item("ColumnCondVenta") = f.CondicionVenta
             myRow.Item("ColumnTelefono") = p.fono
             myRow.Item("ColumnVendedor") = f.Vendedor
+            If ced = True Then
+                myRow.Item("Fcedible") = "CEDIBLE"
+            Else
+                myRow.Item("Fcedible") = "DOCUMENTO ORIGINAL"
+            End If
+
             Fecha = f.Fecha
 
             myRow.Item("ColumnDia") = Fecha.Chars(0) + Fecha.Chars(1)
@@ -428,14 +440,15 @@ Partial Public Class frmDocumentosEmitidos
 
     Protected Sub VerPdf_Click1(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvLV.RowCommand
 
+        Dim ced As Boolean = False
+        Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+
+        Dim row As GridViewRow = gvLV.Rows(index)
+
+        Dim ndocumento As String = row.Cells(2).Text
+        Dim nrutcliente As String = row.Cells(1).Text
+
         If (e.CommandName = "VerPdfButton") Then
-
-            Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-
-            Dim row As GridViewRow = gvLV.Rows(index)
-
-            Dim ndocumento As String = row.Cells(2).Text
-            Dim nrutcliente As String = row.Cells(1).Text
 
             If row.Cells(0).Text = "Factura" Then
 
@@ -450,7 +463,7 @@ Partial Public Class frmDocumentosEmitidos
 
                 'MsgBox(per.Rut + " " + per.razonsocial + " " + per.giro + " " + per.fono + " " + per.direccion + " " + per.comuna + " " + per.Ciudad)
                 ' MsgBox(fac.Iva + " " + fac.Neto + " " + fac.Total + " " + fac.Fecha + " " + fac.Vendedor)
-                Me.showfacture(per, fac, itemfac)
+                Me.showfacture(per, fac, itemfac, ced)
             Else
                 Dim nc As NotaDeCredito = DirectCast(CL.ObtenerNotaCredito(ndocumento).Item(0), NotaDeCredito)
 
@@ -463,16 +476,42 @@ Partial Public Class frmDocumentosEmitidos
                 Dim per As persona = New persona(cliente.Item(0), cliente.Item(1), _
                 cliente.Item(2), cliente.Item(3), cliente.Item(4), cliente.Item(5), cliente.Item(6))
 
-                Me.shownotacredito(per, fac, itemnc, nc)
+                Me.shownotacredito(per, fac, itemnc, nc, ced)
 
             End If
 
+        Else
+            ced = True
 
+            If row.Cells(0).Text = "Factura" Then
+
+                Dim fac As factura = DirectCast(CL.BuscarFactura(ndocumento).Item(0), factura)
+
+                Dim itemfac As ArrayList = CL.ObtenerItemFactura(ndocumento)
+
+                Dim cliente As ArrayList = CL.retornaCliente(nrutcliente)
+
+                Dim per As persona = New persona(cliente.Item(0), cliente.Item(1), _
+                cliente.Item(2), cliente.Item(3), cliente.Item(4), cliente.Item(5), cliente.Item(6))
+
+                'MsgBox(per.Rut + " " + per.razonsocial + " " + per.giro + " " + per.fono + " " + per.direccion + " " + per.comuna + " " + per.Ciudad)
+                ' MsgBox(fac.Iva + " " + fac.Neto + " " + fac.Total + " " + fac.Fecha + " " + fac.Vendedor)
+                Me.showfacture(per, fac, itemfac, ced)
+            Else
+                Dim nc As NotaDeCredito = DirectCast(CL.ObtenerNotaCredito(ndocumento).Item(0), NotaDeCredito)
+
+                Dim fac As factura = DirectCast(CL.BuscarFactura(nc.Factura).Item(0), factura)
+
+                Dim itemnc As ArrayList = CL.ObtenerItemNC(nc.Id)
+
+                Dim cliente As ArrayList = CL.retornaCliente(nrutcliente)
+
+                Dim per As persona = New persona(cliente.Item(0), cliente.Item(1), _
+                cliente.Item(2), cliente.Item(3), cliente.Item(4), cliente.Item(5), cliente.Item(6))
+
+                Me.shownotacredito(per, fac, itemnc, nc, ced)
+
+            End If
         End If
-    End Sub
-
-
-    Protected Sub ImageButton1_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ImageButton1.Click
-
     End Sub
 End Class
