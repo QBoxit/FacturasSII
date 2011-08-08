@@ -5,7 +5,7 @@ Public Class bd
 
     Private conn As NpgsqlConnection
 
-    Private stringConnection As String = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=1a2b3c;Database=facturacion;"
+    Private stringConnection As String = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=golden;Database=facturacion;"
 
 
     Public Sub New()
@@ -220,7 +220,7 @@ Public Class bd
             Dim nc As NotaDeCredito
 
             While dr.Read()
-                nc = New NotaDeCredito(CStr(dr("id")), CStr(dr("fkfactura")), CStr(dr("dia")) + "/" + CStr(dr("mes")) + "/" + CStr(dr("anio")), CStr(dr("iva")), CStr(dr("neto")), CStr(dr("total")))
+                nc = New NotaDeCredito(CStr(dr("id")), CStr(dr("fkfactura")), CStr(dr("dia")) + "/" + CStr(dr("mes")) + "/" + CStr(dr("anio")), CStr(dr("iva")), CStr(dr("neto")), CStr(dr("total")), CStr(dr("detalle")))
                 array.Add(nc)
 
             End While

@@ -6,34 +6,355 @@ Factura
 </name>
 </assembly>
 <members>
-<member name="T:Factura.DataSetFactura.DataTableItemFacturaDataTable">
+<member name="F:Factura.frmBienvenida.lblMensaje">
 	<summary>
-Represents the strongly named DataTable class.
+Control lblMensaje.
 </summary>
-</member><member name="T:Factura.DataSetFactura.DataTableDatosFactDataTable">
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="T:Factura.frmBienvenida">
 	<summary>
-Represents the strongly named DataTable class.
+Clase frmBienvenida.
 </summary>
-</member><member name="T:Factura.DataSetFactura.DataTableItemFacturaRow">
+	<remarks>
+Clase generada automáticamente.
+</remarks>
+</member><member name="T:Factura.frmLibroCompra">
 	<summary>
-Represents strongly named DataRow class.
+Clase frmLibroCompra.
 </summary>
-</member><member name="T:Factura.DataSetFactura.DataTableDatosFactRow">
+	<remarks>
+Clase generada automáticamente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblGuia">
 	<summary>
-Represents strongly named DataRow class.
+Control lblGuia.
 </summary>
-</member><member name="T:Factura.DataSetFactura.DataTableItemFacturaRowChangeEvent">
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.Panel1">
 	<summary>
-Row event argument class
+Control Panel1.
 </summary>
-</member><member name="T:Factura.DataSetFactura.DataTableDatosFactRowChangeEvent">
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.DropCriterio">
 	<summary>
-Row event argument class
+Control DropCriterio.
 </summary>
-</member><member name="T:Factura.DataSetFactura">
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.ButtonCriterio">
 	<summary>
-Represents a strongly typed in-memory cache of data.
+Control ButtonCriterio.
 </summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblRazon">
+	<summary>
+Control lblRazon.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textIdFactura">
+	<summary>
+Control textIdFactura.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.BttnFactura">
+	<summary>
+Control BttnFactura.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblFono">
+	<summary>
+Control lblFono.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textFono">
+	<summary>
+Control textFono.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblDireccion">
+	<summary>
+Control lblDireccion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textRut">
+	<summary>
+Control textRut.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblPedido">
+	<summary>
+Control lblPedido.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textDireccion">
+	<summary>
+Control textDireccion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblComuna">
+	<summary>
+Control lblComuna.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textComuna">
+	<summary>
+Control textComuna.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblGiro">
+	<summary>
+Control lblGiro.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textGiro">
+	<summary>
+Control textGiro.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.Label3">
+	<summary>
+Control Label3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textCondVenta">
+	<summary>
+Control textCondVenta.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.Label2">
+	<summary>
+Control Label2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textGuiaDespacho">
+	<summary>
+Control textGuiaDespacho.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblFecha">
+	<summary>
+Control lblFecha.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.BasicDatePicker1">
+	<summary>
+Control BasicDatePicker1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.lblPrecioUnitario">
+	<summary>
+Control lblPrecioUnitario.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.TextRazonSocial">
+	<summary>
+Control TextRazonSocial.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.textVendedor">
+	<summary>
+Control textVendedor.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.Label4">
+	<summary>
+Control Label4.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.txtOrdenCompra">
+	<summary>
+Control txtOrdenCompra.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.Label5">
+	<summary>
+Control Label5.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.txtCiudad">
+	<summary>
+Control txtCiudad.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.avisoNT">
+	<summary>
+Control avisoNT.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.PanelGrid">
+	<summary>
+Control PanelGrid.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.gvwDatos">
+	<summary>
+Control gvwDatos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.PanelDetalle">
+	<summary>
+Control PanelDetalle.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.TextDetalle">
+	<summary>
+Control TextDetalle.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.imgbtnGuardar">
+	<summary>
+Control imgbtnGuardar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.imgbtnLimpiar">
+	<summary>
+Control imgbtnLimpiar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.updateUser">
+	<summary>
+Control updateUser.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmNotaCredito.imgbtnExportar">
+	<summary>
+Control imgbtnExportar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="T:Factura.frmNotaCredito">
+	<summary>
+Clase frmNotaCredito.
+</summary>
+	<remarks>
+Clase generada automáticamente.
+</remarks>
 </member><member name="M:Factura.Token.GetTokenFromSeedService.#ctor">
 	<remarks/>
 </member><member name="E:Factura.Token.GetTokenFromSeedService.getStateCompleted">
@@ -110,7 +431,63 @@ Represents a strongly typed in-memory cache of data.
 	<remarks/>
 </member><member name="T:Factura.Token.getTokenCompletedEventArgs">
 	<remarks/>
-</member><member name="F:Factura.frmLibroCompra.Panel1">
+</member><member name="T:Factura.DataNotaCredito.DataTableDatosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Factura.DataNotaCredito.DataTableItemDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Factura.DataNotaCredito.DataTableDatosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Factura.DataNotaCredito.DataTableItemRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Factura.DataNotaCredito.DataTableDatosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Factura.DataNotaCredito.DataTableItemRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Factura.DataNotaCredito">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Factura.DataSetFactura.DataTableItemFacturaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Factura.DataSetFactura.DataTableDatosFactDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Factura.DataSetFactura.DataTableItemFacturaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Factura.DataSetFactura.DataTableDatosFactRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Factura.DataSetFactura.DataTableItemFacturaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Factura.DataSetFactura.DataTableDatosFactRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Factura.DataSetFactura">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="F:Factura.frmLibroVenta.Panel1">
 	<summary>
 Control Panel1.
 </summary>
@@ -118,135 +495,7 @@ Control Panel1.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.lblRut">
-	<summary>
-Control lblRut.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.txtRut">
-	<summary>
-Control txtRut.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.Label4">
-	<summary>
-Control Label4.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.txtFecha">
-	<summary>
-Control txtFecha.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.Label2">
-	<summary>
-Control Label2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.txtDocumento">
-	<summary>
-Control txtDocumento.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.Label5">
-	<summary>
-Control Label5.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.txtIva">
-	<summary>
-Control txtIva.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.Label3">
-	<summary>
-Control Label3.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.txtProveedor">
-	<summary>
-Control txtProveedor.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.Label6">
-	<summary>
-Control Label6.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.txtNeto">
-	<summary>
-Control txtNeto.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.Label7">
-	<summary>
-Control Label7.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.txtTotal">
-	<summary>
-Control txtTotal.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.Button1">
-	<summary>
-Control Button1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.errorFaltaDatos">
-	<summary>
-Control errorFaltaDatos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroCompra.ComboMes">
+</member><member name="F:Factura.frmLibroVenta.ComboMes">
 	<summary>
 Control ComboMes.
 </summary>
@@ -254,7 +503,7 @@ Control ComboMes.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.lblAnio">
+</member><member name="F:Factura.frmLibroVenta.lblAnio">
 	<summary>
 Control lblAnio.
 </summary>
@@ -262,15 +511,15 @@ Control lblAnio.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.ImageButton1">
+</member><member name="F:Factura.frmLibroVenta.btnVerMesLV">
 	<summary>
-Control ImageButton1.
+Control btnVerMesLV.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.lblivaMes">
+</member><member name="F:Factura.frmLibroVenta.lblivaMes">
 	<summary>
 Control lblivaMes.
 </summary>
@@ -278,7 +527,7 @@ Control lblivaMes.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.lblnetoMes">
+</member><member name="F:Factura.frmLibroVenta.lblnetoMes">
 	<summary>
 Control lblnetoMes.
 </summary>
@@ -286,7 +535,7 @@ Control lblnetoMes.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.lbltotalMes">
+</member><member name="F:Factura.frmLibroVenta.lbltotalMes">
 	<summary>
 Control lbltotalMes.
 </summary>
@@ -294,7 +543,7 @@ Control lbltotalMes.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.Label1">
+</member><member name="F:Factura.frmLibroVenta.Label1">
 	<summary>
 Control Label1.
 </summary>
@@ -302,24 +551,143 @@ Control Label1.
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Factura.frmLibroCompra.gvLC">
+</member><member name="F:Factura.frmLibroVenta.errorFaltaDatos">
 	<summary>
-Control gvLC.
+Control errorFaltaDatos.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="T:Factura.frmLibroCompra">
+</member><member name="F:Factura.frmLibroVenta.gvLV">
 	<summary>
-Clase frmLibroCompra.
+Control gvLV.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="T:Factura.frmLibroVenta">
+	<summary>
+Clase frmLibroVenta.
 </summary>
 	<remarks>
 Clase generada automáticamente.
 </remarks>
-</member><member name="T:Factura.frmLibroCompra">
+</member><member name="F:Factura.frmDocmentosRecividos.Panel1">
 	<summary>
-Clase frmLibroCompra.
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocmentosRecividos.ComboMes">
+	<summary>
+Control ComboMes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocmentosRecividos.lblAnio">
+	<summary>
+Control lblAnio.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocmentosRecividos.ImageButton1">
+	<summary>
+Control ImageButton1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocmentosRecividos.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocmentosRecividos.errorFaltaDatos">
+	<summary>
+Control errorFaltaDatos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocmentosRecividos.gvDocRecv">
+	<summary>
+Control gvDocRecv.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="T:Factura.frmDocmentosRecividos">
+	<summary>
+Clase frmDocmentosRecividos.
+</summary>
+	<remarks>
+Clase generada automáticamente.
+</remarks>
+</member><member name="F:Factura.frmDocumentosEmitidos.Panel1">
+	<summary>
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocumentosEmitidos.ComboMes">
+	<summary>
+Control ComboMes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocumentosEmitidos.DropAnio">
+	<summary>
+Control DropAnio.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocumentosEmitidos.ImageButton1">
+	<summary>
+Control ImageButton1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocumentosEmitidos.errorFaltaDatos">
+	<summary>
+Control errorFaltaDatos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmDocumentosEmitidos.gvLV">
+	<summary>
+Control gvLV.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="T:Factura.frmDocumentosEmitidos">
+	<summary>
+Clase frmDocumentosEmitidos.
 </summary>
 	<remarks>
 Clase generada automáticamente.
@@ -739,434 +1107,6 @@ Clase frmFactura.
 	<remarks>
 Clase generada automáticamente.
 </remarks>
-</member><member name="F:Factura.frmBienvenida.lblMensaje">
-	<summary>
-Control lblMensaje.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="T:Factura.frmBienvenida">
-	<summary>
-Clase frmBienvenida.
-</summary>
-	<remarks>
-Clase generada automáticamente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblGuia">
-	<summary>
-Control lblGuia.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.Panel1">
-	<summary>
-Control Panel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblRazon">
-	<summary>
-Control lblRazon.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textIdFactura">
-	<summary>
-Control textIdFactura.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblFono">
-	<summary>
-Control lblFono.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textFono">
-	<summary>
-Control textFono.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblDireccion">
-	<summary>
-Control lblDireccion.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textRut">
-	<summary>
-Control textRut.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblPedido">
-	<summary>
-Control lblPedido.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textDireccion">
-	<summary>
-Control textDireccion.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblComuna">
-	<summary>
-Control lblComuna.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textComuna">
-	<summary>
-Control textComuna.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblGiro">
-	<summary>
-Control lblGiro.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textGiro">
-	<summary>
-Control textGiro.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.Label3">
-	<summary>
-Control Label3.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textCondVenta">
-	<summary>
-Control textCondVenta.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.Label2">
-	<summary>
-Control Label2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textGuiaDespacho">
-	<summary>
-Control textGuiaDespacho.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblFecha">
-	<summary>
-Control lblFecha.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.BasicDatePicker1">
-	<summary>
-Control BasicDatePicker1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.lblPrecioUnitario">
-	<summary>
-Control lblPrecioUnitario.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.TextRazonSocial">
-	<summary>
-Control TextRazonSocial.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.Label1">
-	<summary>
-Control Label1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.textVendedor">
-	<summary>
-Control textVendedor.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.Label4">
-	<summary>
-Control Label4.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.txtOrdenCompra">
-	<summary>
-Control txtOrdenCompra.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.avisoNT">
-	<summary>
-Control avisoNT.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.Button1">
-	<summary>
-Control Button1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.gvwDatos">
-	<summary>
-Control gvwDatos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.imgbtnGuardar">
-	<summary>
-Control imgbtnGuardar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.imgbtnLimpiar">
-	<summary>
-Control imgbtnLimpiar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmNotaCredito.imgbtnExportar">
-	<summary>
-Control imgbtnExportar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="T:Factura.frmNotaCredito">
-	<summary>
-Clase frmNotaCredito.
-</summary>
-	<remarks>
-Clase generada automáticamente.
-</remarks>
-</member><member name="F:Factura.frmDocmentosRecividos.Panel1">
-	<summary>
-Control Panel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocmentosRecividos.ComboMes">
-	<summary>
-Control ComboMes.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocmentosRecividos.lblAnio">
-	<summary>
-Control lblAnio.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocmentosRecividos.ImageButton1">
-	<summary>
-Control ImageButton1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocmentosRecividos.Label1">
-	<summary>
-Control Label1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocmentosRecividos.errorFaltaDatos">
-	<summary>
-Control errorFaltaDatos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocmentosRecividos.gvDocRecv">
-	<summary>
-Control gvDocRecv.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="T:Factura.frmDocmentosRecividos">
-	<summary>
-Clase frmDocmentosRecividos.
-</summary>
-	<remarks>
-Clase generada automáticamente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.Panel1">
-	<summary>
-Control Panel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.ComboMes">
-	<summary>
-Control ComboMes.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.lblAnio">
-	<summary>
-Control lblAnio.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.btnVerMesLV">
-	<summary>
-Control btnVerMesLV.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.lblivaMes">
-	<summary>
-Control lblivaMes.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.lblnetoMes">
-	<summary>
-Control lblnetoMes.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.lbltotalMes">
-	<summary>
-Control lbltotalMes.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.Label1">
-	<summary>
-Control Label1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.errorFaltaDatos">
-	<summary>
-Control errorFaltaDatos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmLibroVenta.gvLV">
-	<summary>
-Control gvLV.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="T:Factura.frmLibroVenta">
-	<summary>
-Clase frmLibroVenta.
-</summary>
-	<remarks>
-Clase generada automáticamente.
-</remarks>
 </member><member name="P:Factura.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
@@ -1180,89 +1120,6 @@ Clase generada automáticamente.
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="T:Factura.DataNotaCredito.DataTableDatosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Factura.DataNotaCredito.DataTableItemDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Factura.DataNotaCredito.DataTableDatosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Factura.DataNotaCredito.DataTableItemRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Factura.DataNotaCredito.DataTableDatosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Factura.DataNotaCredito.DataTableItemRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Factura.DataNotaCredito">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="F:Factura.frmDocumentosEmitidos.Panel1">
-	<summary>
-Control Panel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocumentosEmitidos.ComboMes">
-	<summary>
-Control ComboMes.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocumentosEmitidos.DropAnio">
-	<summary>
-Control DropAnio.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocumentosEmitidos.ImageButton1">
-	<summary>
-Control ImageButton1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocumentosEmitidos.errorFaltaDatos">
-	<summary>
-Control errorFaltaDatos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Factura.frmDocumentosEmitidos.gvLV">
-	<summary>
-Control gvLV.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="T:Factura.frmDocumentosEmitidos">
-	<summary>
-Clase frmDocumentosEmitidos.
-</summary>
-	<remarks>
-Clase generada automáticamente.
-</remarks>
 </member><member name="M:Factura.Seed.CrSeedService.#ctor">
 	<remarks/>
 </member><member name="E:Factura.Seed.CrSeedService.getStateCompleted">
@@ -1374,6 +1231,213 @@ Para modificar, mueva la declaración del campo del archivo del diseñador al ar
 </member><member name="T:Factura.Principal">
 	<summary>
 Clase Principal.
+</summary>
+	<remarks>
+Clase generada automáticamente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Panel1">
+	<summary>
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.lblRut">
+	<summary>
+Control lblRut.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.txtRut">
+	<summary>
+Control txtRut.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Label4">
+	<summary>
+Control Label4.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.txtFecha">
+	<summary>
+Control txtFecha.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Label2">
+	<summary>
+Control Label2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.txtDocumento">
+	<summary>
+Control txtDocumento.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Label5">
+	<summary>
+Control Label5.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.txtIva">
+	<summary>
+Control txtIva.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Label3">
+	<summary>
+Control Label3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.txtProveedor">
+	<summary>
+Control txtProveedor.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Label6">
+	<summary>
+Control Label6.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.txtNeto">
+	<summary>
+Control txtNeto.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Label7">
+	<summary>
+Control Label7.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.txtTotal">
+	<summary>
+Control txtTotal.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Button1">
+	<summary>
+Control Button1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.errorFaltaDatos">
+	<summary>
+Control errorFaltaDatos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.ComboMes">
+	<summary>
+Control ComboMes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.lblAnio">
+	<summary>
+Control lblAnio.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.ImageButton1">
+	<summary>
+Control ImageButton1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.lblivaMes">
+	<summary>
+Control lblivaMes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.lblnetoMes">
+	<summary>
+Control lblnetoMes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.lbltotalMes">
+	<summary>
+Control lbltotalMes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Factura.frmLibroCompra.gvLC">
+	<summary>
+Control gvLC.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificar, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="T:Factura.frmLibroCompra">
+	<summary>
+Clase frmLibroCompra.
 </summary>
 	<remarks>
 Clase generada automáticamente.
