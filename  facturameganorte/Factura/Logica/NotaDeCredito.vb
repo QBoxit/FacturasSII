@@ -6,9 +6,10 @@ Public Class NotaDeCredito
     Private _iva As String
     Private _neto As String
     Private _total As String
+    Private _detalle As String
 
 
-    Public Sub New(ByVal _id As String, ByVal _factura As String, ByVal _fecha As String, ByVal _iva As String, ByVal _neto As String, ByVal _total As String)
+    Public Sub New(ByVal _id As String, ByVal _factura As String, ByVal _fecha As String, ByVal _iva As String, ByVal _neto As String, ByVal _total As String, ByVal _detalle As String)
 
         Me._id = _id
         Me._factura = _factura
@@ -16,8 +17,20 @@ Public Class NotaDeCredito
         Me._iva = _iva
         Me._neto = _neto
         Me._total = _total
-
+        Me._detalle = _detalle
     End Sub
+
+    Public Property Detalle() As String
+
+        Get
+            Return _detalle
+        End Get
+
+        Set(ByVal value As String)
+            _detalle = value
+        End Set
+
+    End Property
 
     Public Property Id() As String
 

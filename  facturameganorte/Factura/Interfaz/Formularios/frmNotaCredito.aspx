@@ -12,12 +12,29 @@
         <tr>
             <td align="center" colspan="4" valign="middle" style="height: 196px; text-align: left; width: 838px;">
                 <asp:Panel ID="Panel1" runat="server" BorderStyle="Double">
+                    <table style="width: 888px">
+                        <tr>
+                            <td style="width: 334px">
+                                Seleccione criterio de anulacion de Nota de Credito :</td>
+                            <td>
+                                <asp:DropDownList ID="DropCriterio" runat="server" Width="264px">
+                                <asp:ListItem Value="eleccion">--Eleccion--</asp:ListItem>
+                                <asp:ListItem Value="anulacionItem">Anulacion por Items</asp:ListItem>
+                                <asp:ListItem Value="anulacionDatos">Anulacion por Cambio de datos</asp:ListItem>
+                                <asp:ListItem Value="actualizar">Solo actualizar datos de cliente asociado</asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:Button ID="ButtonCriterio" runat="server" Text="Seleccion" /></td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
                     <table style="width: 793px">
                         <tr>
                             <td style="width: 91px; text-align: left">
                 <asp:Label ID="lblRazon" runat="server" Text="Factura" Width="38px"></asp:Label></td>
                             <td style="width: 307px">
-                <asp:TextBox ID="textIdFactura" runat="server" Width="297px" AutoPostBack="True"  Font-Bold="True" ></asp:TextBox></td>
+                <asp:TextBox ID="textIdFactura" runat="server" Width="208px" AutoPostBack="True"  Font-Bold="True" ReadOnly="True" ></asp:TextBox>
+                                <asp:Button ID="BttnFactura" runat="server" Text="Seleccion" /></td>
                             <td style="width: 102px">
                 <asp:Label ID="lblFono" runat="server" Text="Fono:"></asp:Label></td>
                             <td style="width: 309px">
@@ -57,7 +74,7 @@
                             <td style="width: 91px; text-align: left">
                 <asp:Label ID="lblFecha" runat="server" Text="Fecha:"></asp:Label></td>
                             <td style="width: 307px">
-                                &nbsp;<BDP:BasicDatePicker ID="BasicDatePicker1" runat="server" DateFormat="dd-MM-yyyy"
+                                <BDP:BasicDatePicker ID="BasicDatePicker1" runat="server" DateFormat="dd-MM-yyyy"
                                     Width="232px">
                                 </BDP:BasicDatePicker>
                             </td>
@@ -76,7 +93,28 @@
                             <td style="width: 309px">
                                 <asp:TextBox ID="txtOrdenCompra" runat="server" Width="300px" Font-Bold="True"></asp:TextBox></td>
                         </tr>
+                        <tr>
+                            <td style="width: 91px; text-align: left">
+                                <asp:Label ID="Label5" runat="server" Text="Ciudad :" Width="127px"></asp:Label></td>
+                            <td style="width: 307px">
+                                <asp:TextBox ID="txtCiudad" runat="server" Font-Bold="True" Width="300px" ReadOnly="True"></asp:TextBox></td>
+                            <td style="width: 102px">
+                            </td>
+                            <td style="width: 309px; text-align: left">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 91px; text-align: left">
+                            </td>
+                            <td style="width: 307px">
+                            </td>
+                            <td style="width: 102px">
+                            </td>
+                            <td style="width: 309px; text-align: left">
+                            </td>
+                        </tr>
                     </table>
+                    <br />
                 </asp:Panel>
             <asp:Label ID="avisoNT" runat="server" Font-Bold="True" ForeColor="#FF0000" Width="812px"></asp:Label><br />
                 <table style="width: 821px">
@@ -85,16 +123,13 @@
                             </td>
                     </tr>
                     <tr>
-                        <td style="height: 26px">
-                            </td>
-                    </tr>
-                    <tr>
                         <td style="height: 21px">
                         </td>
                     </tr>
                     <tr>
                         <td style="text-align: center">
-                            &nbsp;<asp:GridView ID="gvwDatos" runat="server" CellPadding="4" ForeColor="#333333"
+                            <asp:Panel ID="PanelGrid" runat="server" Visible="False">
+                                <asp:GridView ID="gvwDatos" runat="server" CellPadding="4" ForeColor="#333333"
                     GridLines="None" AutoGenerateColumns="False" Width="739px">
                     <RowStyle BackColor="#EFF3FB" />
                     <Columns>
@@ -117,6 +152,28 @@
                     <EditRowStyle BackColor="#2461BF" />
                     <AlternatingRowStyle BackColor="White" />
                 </asp:GridView>
+                            </asp:Panel>
+                            <asp:Panel ID="PanelDetalle" runat="server" Visible="False">
+                                <table style="width: 816px">
+                                    <tr>
+                                        <td style="width: 207px; text-align: left">
+                                            Razon de anulacion de factura :</td>
+                                        <td style="text-align: left">
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 207px; text-align: left">
+                                        </td>
+                                        <td style="text-align: left">
+                                            <asp:TextBox ID="TextDetalle" runat="server" Height="144px" Width="512px"></asp:TextBox></td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
+                            &nbsp;
                         </td>
                     </tr>
                 </table>
@@ -126,6 +183,7 @@
             <td align="center" colspan="4" style="height: 22px; width: 838px;" valign="middle">
                 <asp:ImageButton ID="imgbtnGuardar" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_guardar.png" TabIndex="15" />
                 <asp:ImageButton ID="imgbtnLimpiar" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_limpiar.png" />
+                <asp:ImageButton ID="updateUser" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_actualizar.png" />
                 <asp:ImageButton ID="imgbtnExportar" runat="server" ImageUrl="~/Interfaz/Imagenes/btn_exportar.png" TabIndex="16" /></td>
         </tr>
     </table>

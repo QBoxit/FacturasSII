@@ -110,3 +110,15 @@ E:\SSANCHEZ\proyectos2011\MEGANORTE\CarpetaSvn\Factura\obj\Release\Factura.dll
 E:\SSANCHEZ\proyectos2011\MEGANORTE\CarpetaSvn\Factura\obj\Release\Factura.xml
 E:\SSANCHEZ\proyectos2011\MEGANORTE\CarpetaSvn\Factura\obj\Release\Factura.pdb
 E:\SSANCHEZ\proyectos2011\MEGANORTE\CarpetaSvn\Factura\obj\Release\Factura.XmlSerializers.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\bin\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\bin\Factura.pdb
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\bin\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\ResolveAssemblyReference.cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\Factura.NotaCredito.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\Factura.ReporteFactura.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\Factura.ReporteGuiaDespacho.rpt
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\Factura.Resources.resources
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\Factura.vbproj.GenerateResource.Cache
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\Factura.dll
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\Factura.xml
+E:\SSANCHEZ\proyectos2011\MEGANORTE\Carpeta SVN\ facturameganorte\Factura\obj\Debug\Factura.pdb
