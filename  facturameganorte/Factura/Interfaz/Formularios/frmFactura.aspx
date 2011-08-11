@@ -102,7 +102,7 @@
         </tr>
         <tr>
             <td align="center" style="width: 76px; height: 15px;" valign="middle">
-                <asp:Button ID="Button1" runat="server" Text="Button" Visible="False" /></td>
+                <asp:Button ID="Button1" runat="server" Text="Button" /></td>
         </tr>
         <tr>
             <td align="left" valign="bottom" colspan="2" rowspan="1" id="LabelMensaje">
