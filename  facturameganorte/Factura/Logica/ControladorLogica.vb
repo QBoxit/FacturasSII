@@ -396,7 +396,6 @@ Public Class ControladorLogica
         CP.ingresarNotaCredito(nc, arrayItem)
     End Sub
 
-
     Public Function ObtenerIDNotaCredito() As String
         Return CP.ObtenerIDNotaCredito()
     End Function
@@ -459,94 +458,5 @@ Public Class ControladorLogica
     Public Function obtieneValorLibroVenta(ByVal mes As String, ByVal año As String) As ArrayList
         Return CP.obtieneValorLibroVenta(mes, año)
     End Function
-
-    'METODOS PARA AUTENTIFICACION AUTOMATICA SII
-    Public Sub AutentificacionAutomatica()
-        Dim newSeed As New Seed.CrSeedService
-        Dim newToken As New Token.GetTokenFromSeedService
-        Dim Semilla As String
-        Dim Token As String
-        Dim clsXML As New ClassXML
-        Dim StrByte As String
-        Dim StrHash As String
-
-        Try
-            ConvertStringtoXml(newSeed.getSeed(), "Seed")
-            Semilla = obtieneSeed(System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/Seed.xml")
-            clsXML.CreaXmlToken(Semilla)
-            StrByte = CanonicalizaXml(System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/Token.xml")
-            StrHash = CalculaHash(StrByte)
-
-            'Dim Canonilaliza As New XML_C14N(System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/Token.xml")
-            'Canonilaliza.XML_Canonalize()
-            'Dim Firma As New xmlSignature(System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/Token.xml")
-            'Firma.SignXML()
-            'Token = newToken.getToken("Aca va el xml firmado")
-
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-    End Sub
-
-    Private Function ConvertStringtoXml(ByVal stringXML As String, ByVal name As String) As String
-        Dim DatosXml As String = stringXML
-        Dim pathFile As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/" + name + ".xml"
-        Dim xmlDoc As New XmlDocument
-        DatosXml = HttpUtility.UrlDecode(DatosXml)
-        xmlDoc.LoadXml(DatosXml + Environment.NewLine)
-        xmlDoc.Save(pathFile)
-        Return DatosXml
-    End Function
-
-    Private Function obtieneSeed(ByVal path As String) As String
-        Dim reader As New XmlTextReader(path)
-        Dim semilla As String = ""
-        reader.WhitespaceHandling = WhitespaceHandling.None
-        Do While (reader.Read())
-            Dim nombreNodo As String = ""
-            Select Case reader.NodeType
-                Case XmlNodeType.Element 'Mostrar comienzo del elemento.
-                    nombreNodo = reader.Name
-                    If reader.HasAttributes Then 'If attributes exist
-                        While reader.MoveToNextAttribute()
-                            'Mostrar nombre y valor del atributo.
-                            nombreNodo = reader.Name
-                        End While
-                    End If
-                Case XmlNodeType.Text 'Mostrar el texto de cada elemento.
-                    If nombreNodo = "SEMILLA" Then
-                        semilla = reader.Value
-                    End If
-            End Select
-        Loop
-
-        Return semilla
-    End Function
-
-    Private Function CanonicalizaXml(ByVal s1 As String) As String
-        Dim StrReturn As String = ""
-        Dim x1 As New XmlDocument()
-        x1.Load(s1)
-        Dim t As New XmlDsigC14NTransform()
-        t.LoadInput(x1)
-        Dim s As Stream = DirectCast(t.GetOutput(GetType(Stream)), Stream)
-        s.Position = 0
-        Dim nuevoXml As String = New StreamReader(s).ReadToEnd()
-        StrReturn = ConvertStringtoXml(nuevoXml, "C14N")
-        Return StrReturn
-    End Function
-
-    Private Function CalculaHash(ByVal StrConvertHash) As String
-        Dim StrOriginal As String = StrConvertHash
-        Dim byteOriginal As Byte() = Encoding.ASCII.GetBytes(StrOriginal)
-        Dim objAlgoritmo As SHA1 = SHA1.Create()
-        Dim bytHash As Byte() = objAlgoritmo.ComputeHash(byteOriginal)
-        Dim StrHash As String = Convert.ToBase64String(bytHash)
-        Return StrHash
-    End Function
-
-
-
-
 
 End Class

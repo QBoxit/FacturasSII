@@ -516,7 +516,8 @@ Partial Public Class frmFactura
     End Sub
 
     Protected Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        CL.AutentificacionAutomatica()
+        Dim fm As New FirmaDigital
+        fm.AutentificacionAutomatica()
     End Sub
     Protected Sub Eliminar_Click(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvwDatos.RowCommand
 

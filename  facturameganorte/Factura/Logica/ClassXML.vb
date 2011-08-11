@@ -505,4 +505,68 @@ Public Class ClassXML
 
     End Sub
 
+
+    'Public Sub CreaXmlTokenFinal(ByVal seed As String, ByVal Hash As String)
+    '    Dim doc As New XmlTextWriter(System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/TokenFinal.xml", Encoding.UTF8)
+
+    '    doc.WriteStartDocument()
+    '    doc.WriteStartElement("getToken")
+    '    doc.WriteStartElement("Item")
+    '    doc.WriteStartElement("Semilla")
+    '    doc.WriteValue(seed)
+    '    doc.WriteEndElement() 'fin Semilla
+    '    doc.WriteEndElement() 'fin Item
+
+    '    doc.WriteStartElement("Signature")
+    '    doc.WriteStartAttribute("xmlns")
+    '    doc.WriteValue("http://www.w3.org/2000/09/xmldsig#")
+    '    doc.WriteEndAttribute() ' fin xmlns
+    '    doc.WriteStartElement("SignedInfo")
+
+    '    doc.WriteStartElement("CanonicalizationMethod")
+    '    doc.WriteStartAttribute("Algorithm")
+    '    doc.WriteValue("http://www.w3.org/TR/2001/REC-xml-c14n-20010315")
+    '    doc.WriteEndAttribute() 'fin algorithm
+    '    doc.WriteEndElement() 'fin CanonicalizationMethod
+
+    '    doc.WriteStartElement("SignatureMethod")
+    '    doc.WriteStartAttribute("Algorithm")
+    '    doc.WriteValue("http://www.w3.org/TR/2000/09/xmldsig#rsa-shal")
+    '    doc.WriteEndAttribute() 'fin algorithm
+    '    doc.WriteEndElement() 'fin SignatureMethod
+
+    '    doc.WriteStartElement("Reference")
+    '    doc.WriteStartAttribute("URI")
+    '    doc.WriteValue("")
+    '    doc.WriteEndAttribute() 'fin URI
+
+    '    doc.WriteStartElement("Transforms")
+    '    doc.WriteStartElement("Transform")
+    '    doc.WriteStartAttribute("Algorithm")
+    '    doc.WriteValue("http://www.w3.org/2000/09/xmldsig#enveloped-signature")
+    '    doc.WriteEndAttribute() 'fin Algorithm
+    '    doc.WriteEndElement() 'fin Transforms
+    '    doc.WriteEndElement() 'fin Transforms
+
+    '    doc.WriteStartElement("DigesMethod")
+    '    doc.WriteStartAttribute("Algorithm")
+    '    doc.WriteValue("http://www.w3.org/2000/09/xmldsig#shal")
+    '    doc.WriteEndAttribute() 'fin Algorithn
+    '    doc.WriteEndElement() 'fin DigesMethod
+
+    '    doc.WriteStartElement("DigestValue")
+    '    doc.WriteValue(Hash)
+    '    doc.WriteEndElement() 'fin Digestvalue
+    '    doc.WriteEndElement() 'fin Reference
+    '    doc.WriteEndElement() 'fin SignedInfo
+
+    '    doc.WriteEndElement() 'fin Signature
+    '    doc.WriteEndElement() 'fin getToken
+    '    doc.WriteEndDocument() 'fin documento
+
+    '    doc.Flush()
+    '    doc.Close()
+
+    'End Sub
+
 End Class

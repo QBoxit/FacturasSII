@@ -192,11 +192,11 @@
     <Compile Include="Logica\ClassXML.vb" />
     <Compile Include="Logica\ControladorLogica.vb" />
     <Compile Include="Logica\factura.vb" />
+    <Compile Include="Logica\FirmaDigital.vb" />
     <Compile Include="Logica\item.vb" />
     <Compile Include="Logica\libroCompraData.vb" />
     <Compile Include="Logica\NotaDeCredito.vb" />
     <Compile Include="Logica\persona.vb" />
-    <Compile Include="Logica\xmlSignature.vb" />
     <Compile Include="Logica\XML_C14.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
