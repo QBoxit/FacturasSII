@@ -515,10 +515,6 @@ Partial Public Class frmFactura
         Me.meteReporte()
     End Sub
 
-    Protected Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim fm As New FirmaDigital
-        fm.AutentificacionAutomatica()
-    End Sub
     Protected Sub Eliminar_Click(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvwDatos.RowCommand
 
         If (e.CommandName = "EliminarData") Then
@@ -555,5 +551,10 @@ Partial Public Class frmFactura
             Me.gvwDatos.DataSource = dtDatos
             Me.gvwDatos.DataBind()
         End If
+    End Sub
+
+    Protected Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim a As New FirmaDigital
+        a.ArrojaDatosCertificados()
     End Sub
 End Class

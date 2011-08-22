@@ -10,10 +10,12 @@ Imports System.Diagnostics
 
 
 
+
+
 Public Class FirmaDigital
 
 
-    Public Sub AutentificacionAutomatica()
+    Public Function AutentificacionAutomatica() As String
 
         Dim newSeed As New Seed.CrSeedService
         Dim newToken As New Token.GetTokenFromSeedService
@@ -23,33 +25,42 @@ Public Class FirmaDigital
         Dim StrByte As String
         Dim StrHash As String
         Dim StrByteFinal As String
+
         Dim SeedSign As String
+        Dim TokenObtenido As String
         Dim ResultadoSII As String
+
         Dim PathSeed As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/Seed.xml"
         Dim PathToken As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/Token.xml"
         Dim PathTokenAux As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/TokenAux.xml"
+        Dim PathResultado As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/ResultadoObtenido.xml"
+
         Try
             ConvertStringtoXml(newSeed.getSeed(), "Seed")
-            Semilla = obtieneSeed(PathSeed)
+            Semilla = obtieneLecturaXML(PathSeed, "SEMILLA")
             clsXML.CreaXmlToken(Semilla)
 
+            'firma el Xml
             SignXML(PathToken)
+
             SeedSign = ConvertXmlToString(PathToken)
             ResultadoSII = newToken.getToken(SeedSign)
+            ConvertStringtoXml(ResultadoSII, "ResultadoObtenido")
 
+            Dim estado = obtieneLecturaXML(PathResultado, "ESTADO")
 
-            '------METODOS PRUEBA-------
-            'Dim rsa_Key As New RSACryptoServiceProvider(2048)
-            'If func_FirmarArchivoXml(PathToken, PathTokenAux, rsa_Key) Then
-            '    IO.File.Delete(PathToken)
-            '    Rename(PathTokenAux, PathToken)
-            'End If
-
+            If estado = "00" Then
+                TokenObtenido = obtieneLecturaXML(PathResultado, "TOKEN")
+                Return TokenObtenido
+            Else
+                MsgBox("Error con conexion SII, Error numero : " + estado)
+            End If
 
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
-    End Sub
+    End Function
+
 
     Private Function ConvertStringtoXml(ByVal stringXML As String, ByVal name As String) As String
         Dim DatosXml As String = stringXML
@@ -77,7 +88,7 @@ Public Class FirmaDigital
         Return sw.ToString()
     End Function
 
-    Private Function obtieneSeed(ByVal path As String) As String
+    Public Function obtieneLecturaXML(ByVal path As String, ByVal NameItem As String) As String
         Dim reader As New XmlTextReader(path)
         Dim semilla As String = ""
         Dim nombreNodo As String = ""
@@ -93,7 +104,7 @@ Public Class FirmaDigital
                         End While
                     End If
                 Case XmlNodeType.Text 'Mostrar el texto de cada elemento.
-                    If nombreNodo = "SEMILLA" Then
+                    If nombreNodo = NameItem Then
                         semilla = reader.Value
                     End If
             End Select
@@ -157,7 +168,7 @@ Public Class FirmaDigital
 
         Try
 
-            cert = BuscarCertificado()
+            cert = SeleccionarCertificado()
 
             'Cargamos el documento XML
             document.PreserveWhitespace = True
@@ -182,8 +193,13 @@ Public Class FirmaDigital
             'Añadimos la referencia al objeto de firma
             oSignedXml.AddReference(oReference)
 
-            Dim keyInfo As New KeyInfo
+            Dim keyInfo As New KeyInfo()
             keyInfo.AddClause(New KeyInfoX509Data(cert))
+
+
+            Dim rsaKeyValue As New RSAKeyValue(cert.PrivateKey)
+            keyInfo.AddClause(rsaKeyValue)
+
             oSignedXml.KeyInfo = keyInfo
 
             'La calculamos
@@ -201,100 +217,131 @@ Public Class FirmaDigital
         End Try
     End Sub
 
-    Public Function BuscarCertificado() As X509Certificates.X509Certificate2
+    'Public Function BuscarCertificado() As X509Certificates.X509Certificate2
 
-        Dim objStore As New X509Store(StoreName.My)
-        Dim certificado As New X509Certificates.X509Certificate2
+    '    Dim objStore As New X509Store(StoreName.My)
+    '    Dim certificado As New X509Certificates.X509Certificate2
 
-        objStore.Open(OpenFlags.ReadOnly)
+    '    objStore.Open(OpenFlags.ReadOnly)
 
-        For Each objCert As X509Certificate2 In objStore.Certificates
-            certificado = objCert
-        Next
-        objStore.Close()
+    '    For Each objCert As X509Certificate2 In objStore.Certificates
+    '        certificado = objCert
+    '    Next
+    '    objStore.Close()
 
-        Return certificado
+    '    Return certificado
 
+    'End Function
+
+    Public Function obtienePrivateKeyFactura() As String
+        Dim path As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/Folios/FolioFactura.xml"
+        Dim privateKey As String = Me.obtieneLecturaXML(path, "RSASK")
+        Return privateKey
     End Function
 
-    Private Function func_FirmarArchivoXml(ByVal strParamFileName As String, ByVal strParamSignedFileName As String, ByVal Key As RSA) As Boolean
-        Dim doc As New XmlDocument()
+    Public Function obtienePublicKeyFactura() As String
+        Dim path As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/Folios/FolioFactura.xml"
+        Dim publicKey As String = Me.obtieneLecturaXML(Path, "RSAPUBK")
+        Return publicKey
+    End Function
 
+    Public Function obtienePrivateKeyNotaCredito() As String
+        Dim path As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/Folios/FoliosNotaCredito.xml"
+        Dim privateKey As String = Me.obtieneLecturaXML(Path, "RSASK")
+        Return privateKey
+    End Function
+
+    Public Function obtienePublicKeyNotaCredito() As String
+        Dim path As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/Folios/FoliosNotaCredito.xml"
+        Dim publicKey As String = Me.obtieneLecturaXML(Path, "RSAPUBK")
+        Return publicKey
+    End Function
+
+    'Este metodo es el encargado de general el xmlFacturas Firmalo y enviarlo al SII
+    Public Sub FirmaEnviaSiiFactura(ByVal rutEmisor As String, ByVal rutEnvia As String, ByVal rutReceptor As String, ByVal fechaEmision As String, _
+        ByVal rznSocial As String, ByVal giroEmisor As String, ByVal DirOrigen As String, ByVal rznsocialReceptor As String, ByVal giroReceptor As String, _
+        ByVal dirReceptor As String, ByVal comunaRecept As String, ByVal ciudadRecept As String, ByVal total As Double, ByVal montoNeto As Double, _
+        ByVal tasaIva As Double, ByVal ArregloItem As ArrayList)
+
+        Dim CP As New controladorPersistencia()
+        Dim IdFactura As String = CP.ObtenerIDFactura()
+        Dim path As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/DTE" + IdFactura + ".xml"
+        Dim Xml As New ClassXML
+
+        Dim token As String = AutentificacionAutomatica()
+
+        Xml.creaXml(rutEmisor, rutEnvia, rutReceptor, fechaEmision, rznSocial, giroEmisor, DirOrigen, rznsocialReceptor, giroReceptor, _
+        dirReceptor, comunaRecept, ciudadRecept, total, montoNeto, tasaIva, ArregloItem, path)
+        SignXML(path)
+
+    End Sub
+
+    'Este metodo es el encargado de general el xmlFacturas Firmalo y enviarlo al SII
+    Public Sub FirmaEnviaSiiNotaCredito()
+
+    End Sub
+
+    Public Sub ArrojaDatosCertificados()
+        AutentificacionAutomatica()
+    End Sub
+
+    'Public Sub SignXmlDocument(ByVal DireccionXML As String)
+
+    '    Dim key As RSA = RSA.Create()
+    '    Dim xmlDocument As New XmlDocument
+    '    xmlDocument.PreserveWhitespace = True
+    '    xmlDocument.Load(DireccionXML)
+
+    '    Dim signedXml As New SignedXml(xmlDocument)
+    '    signedXml.SigningKey = key
+    '    Dim keyInfo As New KeyInfo()
+    '    Dim rsaKeyValue As New RSAKeyValue(key)
+    '    keyInfo.AddClause(rsaKeyValue)
+    '    signedXml.KeyInfo = keyInfo
+
+    '    Dim reference As New Reference()
+    '    reference.Uri = String.Empty
+    '    Dim envelopedSignatureTransform As New XmlDsigEnvelopedSignatureTransform()
+    '    reference.AddTransform(envelopedSignatureTransform)
+    '    signedXml.AddReference(reference)
+    '    signedXml.ComputeSignature()
+
+    '    Dim element As XmlElement = signedXml.GetXml()
+    '    xmlDocument.DocumentElement.AppendChild(xmlDocument.ImportNode(element, True))
+    '    xmlDocument.Save(DireccionXML)
+
+    'End Sub
+
+
+    Public Shared Function SeleccionarCertificado() As X509Certificate2
+        'TODO: Sustituirse por una invocacion a una interfaz que se le inyecta a esta clase para
+        'seleccionar certificados.
+        'Cargar certificados del usuario que contienen llave privada
+        Dim store As New X509Store(StoreLocation.LocalMachine)
+        store.Open(OpenFlags.ReadOnly)
         Try
-            func_FirmarArchivoXml = True
+            Dim certSeleccionado As X509Certificate2 = Nothing
+            For Each cert As X509Certificate2 In store.Certificates
+                If cert.HasPrivateKey Then
+                    'If certSeleccionado = Nothing Then
+                    'tomaremos el primero de ellos para este ejemplo
+                    certSeleccionado = cert
+                    'End If
+                    MsgBox(cert.SubjectName.Name)
+                End If
 
-            'Format the document to ignore white spaces.
-            doc.PreserveWhitespace = False
-            doc.Load(strParamFileName)
+            Next
 
-            'Create a SignedXml object.  
-            Dim signedXml As New SignedXml(doc)
+            Return certSeleccionado
 
-
-            'Create a reference to be signed.
-            Dim reference As New Reference()
-            reference.Uri = ""
-
-            'Add an enveloped transformation to the reference.
-            Dim env As New XmlDsigEnvelopedSignatureTransform()
-            reference.AddTransform(env)
-
-            'Add the reference to the SignedXml object.
-            signedXml.AddReference(reference)
-
-            'Add an RSAKeyValue KeyInfo (optional; helps recipient find key to validate).
-            Dim keyInfo As New KeyInfo()
-            Dim Certificado As X509Certificate2
-
-            Certificado = Me.BuscarCertificado()
-
-            ' Add the key to the SignedXml document. 
-            signedXml.SigningKey = Key
-            signedXml.SigningKey = Certificado.PrivateKey
-
-            Dim kdata As New KeyInfoX509Data(Certificado)
-
-            keyInfo.AddClause(kdata)
-
-            signedXml.KeyInfo = keyInfo
-
-            ' Compute the signature.
-            signedXml.ComputeSignature()
-
-            Dim xmlDigitalSignature As XmlElement = signedXml.GetXml()
-
-            ' Append the element to the XML document.
-            doc.DocumentElement.AppendChild(doc.ImportNode(xmlDigitalSignature, True))
-
-            If TypeOf doc.FirstChild Is XmlDeclaration Then
-                doc.RemoveChild(doc.FirstChild)
-            End If
-
-            'Save the signed XML document to a file specified
-            'using the passed string.
-            Dim xmltw As New XmlTextWriter(strParamSignedFileName, New UTF8Encoding(False))
-            doc.WriteTo(xmltw)
-            xmltw.Close()
-            Threading.Thread.Sleep(10)
-            doc.Save(strParamFileName)
-            'doc.RemoveAll()
-            env = Nothing
-            'doc = Nothing
-
-            xmltw = Nothing
-            keyInfo = Nothing
-            reference = Nothing
-            signedXml = Nothing
-            xmlDigitalSignature = Nothing
-
-        Catch err As Exception
-            MsgBox(err.Message, MsgBoxStyle.Critical & Chr(13) & "Archivo No firmado digitalmente", "Firma Digital")
         Finally
-            doc = Nothing
+            store.Close()
+
         End Try
 
-
-
     End Function
 
+    
+
+   
 End Class

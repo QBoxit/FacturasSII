@@ -142,9 +142,9 @@ Public Class controladorPersistencia
 
         'CREACION DEL XML
 
-        Dim nuevoXml As New ClassXML
+        Dim nuevoXml As New FirmaDigital
 
-        nuevoXml.creaXml("96.730.160-4", "96.730.160-4", fact.Cliente, fact.Fecha, "MegaNorte S.A", "PRESTACIÓN DE SERVICIOS DE RECURSOS" + _
+        nuevoXml.FirmaEnviaSiiFactura("96.730.160-4", "96.730.160-4", fact.Cliente, fact.Fecha, "MegaNorte S.A", "PRESTACIÓN DE SERVICIOS DE RECURSOS" + _
         "TÉCNICOS EN MATERIAS INHERENTES A SEGURIDAD PRIVADA. IMPORTACIÓN, COMERCIALIZACIÓN Y SERVICIO TÉCNICO DE EQUIPOS DE COMUNICACIONES Y" + _
         "RADIODIFUSIÓN ", "GUARDIA VIEJA 181, OFICINA 804", fact.Persona.razonsocial, fact.Persona.giro, fact.Persona.direccion, _
         fact.Persona.comuna, fact.Persona.Ciudad, fact.Total, fact.Neto, fact.Iva, array)

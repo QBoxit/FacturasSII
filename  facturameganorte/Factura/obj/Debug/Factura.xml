@@ -6,7 +6,41 @@ Factura
 </name>
 </assembly>
 <members>
-<member name="F:Factura.frmBienvenida.lblMensaje">
+<member name="F:Factura.FirmadorXml.miCertificadoSolicitado">
+	<summary>
+ Indica si el certificado ya ha sido solicitado al usuario.
+ </summary>
+</member><member name="F:Factura.FirmadorXml.miCertificado">
+	<summary>
+ Certificado que se utiliza para firmar digitalmente, si es null despues de haberlo
+ solicitado al usuario se utiliza una llave creada en el almacen de claves de Windows.
+ </summary>
+</member><member name="M:Factura.FirmadorXml.FirmadorXml">
+	<summary>
+ Constructor.
+ </summary>
+</member><member name="M:Factura.FirmadorXml.VerificarFirma(System.Xml.XmlDocument)">
+	<summary>
+ Verifica la firma digital de un documento XML.
+ </summary>
+	<param name="xmlDoc"></param>
+	<returns></returns>
+</member><member name="M:Factura.FirmadorXml.VerificarFirmaConCertificado(System.Xml.XmlDocument)">
+	<summary>
+ Verifica la firma digital de un documento XML utilizando un certificado de usuario.
+ </summary>
+	<param name="xmlDoc"></param>
+	<returns></returns>
+</member><member name="M:Factura.FirmadorXml.GarantizarCertificadoDeUsuario">
+	<summary>
+ Solicita el certificado al usuario una sola vez por sesión.
+ </summary>
+</member><member name="M:Factura.FirmadorXml.SeleccionarCertificado">
+	<summary>
+ Selecciona un certificado de usuario.
+ </summary>
+	<returns></returns>
+</member><member name="F:Factura.frmBienvenida.lblMensaje">
 	<summary>
 Control lblMensaje.
 </summary>
