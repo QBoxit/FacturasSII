@@ -8,13 +8,14 @@ Public Class ClassXML
     Dim CP As New controladorPersistencia
 
     Public Sub creaXml(ByVal rutEmisor As String, ByVal rutEnvia As String, ByVal rutReceptor As String, ByVal fechaEmision As String, _
-    ByVal rznSocial As String, ByVal giroEmisor As String, ByVal DirOrigen As String, ByVal rznsocialReceptor As String, ByVal giroReceptor As String, ByVal dirReceptor As String, _
-    ByVal comunaRecept As String, ByVal ciudadRecept As String, ByVal total As Double, ByVal montoNeto As Double, ByVal tasaIva As Double, ByVal ArregloItem As ArrayList)
+    ByVal rznSocial As String, ByVal giroEmisor As String, ByVal DirOrigen As String, ByVal rznsocialReceptor As String, ByVal giroReceptor As String, _
+    ByVal dirReceptor As String, ByVal comunaRecept As String, ByVal ciudadRecept As String, ByVal total As Double, ByVal montoNeto As Double, _
+    ByVal tasaIva As Double, ByVal ArregloItem As ArrayList, ByVal pathOrg As String)
 
 
         Dim IdFactura As String = CP.ObtenerIDFactura()
         Dim counter As Integer = 0
-        Dim doc As New XmlTextWriter(System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/DTE" + IdFactura + ".xml", Encoding.UTF8)
+        Dim doc As New XmlTextWriter(pathOrg, Encoding.UTF8)
 
         doc.WriteStartDocument()
         doc.WriteStartElement("EnvioDTE")
@@ -63,11 +64,11 @@ Public Class ClassXML
         doc.WriteEndElement()
 
         doc.WriteStartElement("NroResol")
-        doc.WriteValue("1")
+        doc.WriteValue("FALTA")
         doc.WriteEndElement()
 
         doc.WriteStartElement("TmstFirmaEnv")
-        doc.WriteValue("2003-10-13T09:33:22")
+        doc.WriteValue("FALTA")
         doc.WriteEndElement()
 
         doc.WriteStartElement("SubTotDTE")
@@ -76,7 +77,7 @@ Public Class ClassXML
         doc.WriteEndElement()
 
         doc.WriteStartElement("NroDTE")
-        doc.WriteValue("1")
+        doc.WriteValue("FALTA")
         doc.WriteEndElement()
 
         doc.WriteEndElement()
@@ -89,7 +90,7 @@ Public Class ClassXML
 
         doc.WriteStartElement("Documento")
         doc.WriteStartAttribute("ID")
-        doc.WriteValue("F06T33")
+        doc.WriteValue("FALTA")
         doc.WriteEndAttribute()
 
         doc.WriteStartElement("Encabezado")
@@ -99,7 +100,7 @@ Public Class ClassXML
         doc.WriteEndElement()
 
         doc.WriteStartElement("Folio")
-        doc.WriteValue("60")
+        doc.WriteValue(IdFactura)
         doc.WriteEndElement()
 
         doc.WriteStartElement("FchEmis")
@@ -122,11 +123,11 @@ Public Class ClassXML
         doc.WriteEndElement()
 
         doc.WriteStartElement("Acteco")
-        doc.WriteValue("31341")
+        doc.WriteValue("FALTA")
         doc.WriteEndElement()
 
         doc.WriteStartElement("CdgSIISucur")
-        doc.WriteValue("1234")
+        doc.WriteValue("FALTA")
         doc.WriteEndElement()
 
         doc.WriteStartElement("DirOrigen")
@@ -203,12 +204,12 @@ Public Class ClassXML
             doc.WriteEndElement()
 
             doc.WriteStartElement("VlrCodigo")
-            doc.WriteValue("011")
+            doc.WriteValue(item.Codigo)
             doc.WriteEndElement()
             doc.WriteEndElement() 'fin cdgItem
 
             doc.WriteStartElement("NmbItem")
-            doc.WriteValue(item.Codigo)
+            doc.WriteValue(item.Item)
             doc.WriteEndElement()
 
             doc.WriteStartElement("DscItem")
@@ -228,14 +229,19 @@ Public Class ClassXML
 
             doc.WriteEndElement() 'fin Detalle
         Next
+
+        Dim PrimerItem As item = DirectCast(ArregloItem.Item(0), item)
+        Dim nombrePrimerItem As String = PrimerItem.Item
+        Dim monto As Integer = CInt(PrimerItem.PrecioUnitario) * CInt(PrimerItem.Cantidad)
+
         doc.WriteStartElement("TED")
         doc.WriteStartAttribute("version")
         doc.WriteValue("1.0")
         doc.WriteEndAttribute()
 
-        doc.WriteStartElement("DD")
+
         doc.WriteStartElement("RE")
-        doc.WriteValue("")
+        doc.WriteValue(rutEmisor)
         doc.WriteEndElement()
 
         doc.WriteStartElement("TD")
@@ -243,29 +249,50 @@ Public Class ClassXML
         doc.WriteEndElement()
 
         doc.WriteStartElement("F")
-        doc.WriteValue("60")
+        doc.WriteValue(IdFactura)
         doc.WriteEndElement()
 
         doc.WriteStartElement("FE")
-        doc.WriteValue("")
+        doc.WriteValue(fechaEmision)
         doc.WriteEndElement()
 
         doc.WriteStartElement("RR")
-        doc.WriteValue("")
+        doc.WriteValue(rutReceptor)
         doc.WriteEndElement()
 
         doc.WriteStartElement("RSR")
-        doc.WriteValue("")
+        doc.WriteValue(rznSocial)
         doc.WriteEndElement()
 
         doc.WriteStartElement("MNT")
-        doc.WriteValue("")
+        doc.WriteValue(monto)
         doc.WriteEndElement()
 
         doc.WriteStartElement("IT1")
-        doc.WriteValue("")
+        doc.WriteValue(nombrePrimerItem)
         doc.WriteEndElement()
 
+        'Fin de datos precargados
+
+
+        ' Lectura de datos desde Folios Autorizados
+        '------------------------------------------
+        Dim SignDigital As New FirmaDigital()
+        Dim Path As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/Folios/FolioFactura.xml"
+        Dim RE As String = SignDigital.obtieneLecturaXML(Path, "RE")
+        Dim RS As String = SignDigital.obtieneLecturaXML(Path, "RS")
+        Dim TD As String = SignDigital.obtieneLecturaXML(Path, "TD")
+        Dim D As String = SignDigital.obtieneLecturaXML(Path, "D")
+        Dim H As String = SignDigital.obtieneLecturaXML(Path, "H")
+        Dim FA As String = SignDigital.obtieneLecturaXML(Path, "FA")
+        Dim M As String = SignDigital.obtieneLecturaXML(Path, "M")
+        Dim E As String = SignDigital.obtieneLecturaXML(Path, "E")
+        Dim IDK As String = SignDigital.obtieneLecturaXML(Path, "IDK")
+        Dim FRMA As String = SignDigital.obtieneLecturaXML(Path, String.Format("FRMA algortimo={0}SHA1withRSA{0} ", Chr(34)))
+        Dim RSASK As String = SignDigital.obtienePrivateKeyFactura()
+        Dim RSAPUBK As String = SignDigital.obtienePublicKeyFactura()
+
+        doc.WriteStartElement("AUTORIZACION")
         doc.WriteStartElement("CAF")
         doc.WriteStartAttribute("version")
         doc.WriteValue("1.0")
@@ -273,43 +300,43 @@ Public Class ClassXML
 
         doc.WriteStartElement("DA")
         doc.WriteStartElement("RE")
-        doc.WriteValue("")
+        doc.WriteValue(RE)
         doc.WriteEndElement()
 
         doc.WriteStartElement("RS")
-        doc.WriteValue("")
+        doc.WriteValue(RS)
         doc.WriteEndElement()
 
         doc.WriteStartElement("TD")
-        doc.WriteValue("33")
+        doc.WriteValue(TD)
         doc.WriteEndElement()
 
         doc.WriteStartElement("RNG")
         doc.WriteStartElement("D")
-        doc.WriteValue("1")
+        doc.WriteValue(D)
         doc.WriteEndElement()
 
         doc.WriteStartElement("H")
-        doc.WriteValue("200")
+        doc.WriteValue(H)
         doc.WriteEndElement()
         doc.WriteEndElement() 'fin RNG
 
         doc.WriteStartElement("FA")
-        doc.WriteValue("")
+        doc.WriteValue(FA)
         doc.WriteEndElement()
 
         doc.WriteStartElement("RSAPK")
         doc.WriteStartElement("M")
-        doc.WriteValue("asdadsaudaa8d0a8da0s")
+        doc.WriteValue(M)
         doc.WriteEndElement()
 
         doc.WriteStartElement("E")
-        doc.WriteValue("")
+        doc.WriteValue(E)
         doc.WriteEndElement()
         doc.WriteEndElement() 'fin RSAPK
 
         doc.WriteStartElement("IDK")
-        doc.WriteValue("100")
+        doc.WriteValue(IDK)
         doc.WriteEndElement()
         doc.WriteEndElement() 'fin DA
 
@@ -317,169 +344,22 @@ Public Class ClassXML
         doc.WriteStartAttribute("algortimo")
         doc.WriteValue("SHA1withRSA")
         doc.WriteEndAttribute()
-        doc.WriteValue("23453454345353453")
+        doc.WriteValue(FRMA)
         doc.WriteEndElement()
         doc.WriteEndElement() 'fin CAF
 
+        doc.WriteStartElement("RSASK")
+        doc.WriteValue(RSASK)
+        doc.WriteEndElement() 'Fin RSASK
 
-        doc.WriteStartElement("TSTED")
-        doc.WriteValue("20000-200000:111")
-        doc.WriteEndElement()
-        doc.WriteEndElement() 'fin DD
+        doc.WriteStartElement("RSAPUBK")
+        doc.WriteValue(RSAPUBK)
+        doc.WriteEndElement() 'Fin RSASK
+        doc.WriteEndElement() 'Fin Autorizacion
 
-        doc.WriteStartElement("FRMT")
-        doc.WriteStartAttribute("algortimo")
-        doc.WriteValue("SHA1withRSA")
-        doc.WriteEndAttribute()
-        doc.WriteValue("23453454345353453")
-        doc.WriteEndElement()
-        doc.WriteEndElement() ' fin TED
-
-        doc.WriteStartElement("TmstFirma")
-        doc.WriteValue("20000:0000")
-        doc.WriteEndElement()
         doc.WriteEndElement() 'fin Documento
 
-        doc.WriteStartElement("Signature")
-        doc.WriteStartAttribute("xmls")
-        doc.WriteValue("http://www.w3.org/2000/09/xmldsig#")
-        doc.WriteEndAttribute()
-
-        doc.WriteStartElement("SignedInfo")
-        doc.WriteStartElement("CanonicalizationMethod")
-        doc.WriteStartAttribute("Algorithm")
-        doc.WriteValue("http://www.w3.org/TR/2001/REC-xml-c14n-20010315")
-        doc.WriteEndAttribute()
-        doc.WriteEndElement()
-
-        doc.WriteStartElement("SignatureMethod")
-        doc.WriteStartAttribute("Algorithm")
-        doc.WriteValue("http://www.w3.org/2000/09/xmldsig#rsa-sha1")
-        doc.WriteEndElement()
-        doc.WriteEndElement()
-
-        doc.WriteStartElement("Reference")
-        doc.WriteStartAttribute("URI")
-        doc.WriteValue("#F60T33")
-        doc.WriteEndAttribute()
-
-        doc.WriteStartElement("Transforms")
-        doc.WriteStartElement("Transform")
-        doc.WriteStartAttribute("Algorithm")
-        doc.WriteValue("http://www.w3.org/TR/2001/REC-xml-c14n-20010315")
-        doc.WriteEndAttribute()
-        doc.WriteEndElement()
-        doc.WriteEndElement() 'fin Transforms
-
-        doc.WriteStartElement("DigestMethod")
-        doc.WriteStartAttribute("Algorithm")
-        doc.WriteValue("http://www.w3.org/2000/09/xmldsig#sha1")
-        doc.WriteEndAttribute()
-        doc.WriteEndElement()
-
-        doc.WriteStartElement("DigestValue")
-        doc.WriteValue("hlmQtu/AyjUjTDhM3852wvRCr8w=</")
-        doc.WriteEndElement()
-        doc.WriteEndElement() 'fin reference
-        doc.WriteEndElement() 'fin SignedInfo
-
-        doc.WriteStartElement("SignatureValue")
-        doc.WriteValue("sBnr8Yq14vVAcrN/pKLD/BrqUFczKMW3y1t3JOrdsxhhq6IxvS13SgyMXbIN")
-        doc.WriteEndElement()
-
-        doc.WriteStartElement("KeyInfo")
-        doc.WriteStartElement("KeyValue")
-        doc.WriteStartElement("RSAKeyValue")
-        doc.WriteStartElement("Modulus")
-        doc.WriteValue("asdasdasdadasdasdasdasd")
-        doc.WriteEndElement()
-
-        doc.WriteStartElement("Exponent")
-        doc.WriteValue("AQAB")
-        doc.WriteEndElement()
-        doc.WriteEndElement() 'fin RSAKeyValue
-        doc.WriteEndElement() 'fin KeyValue
-
-        doc.WriteStartElement("X509Data")
-        doc.WriteStartElement("X509Certificate")
-        doc.WriteValue("Aqui va certificado digital")
-        doc.WriteEndElement()
-        doc.WriteEndElement()
-        doc.WriteEndElement() 'fin keyinfo
-        doc.WriteEndElement() 'fin Signature
-        doc.WriteEndElement() 'fin DTE
-        doc.WriteEndElement() ' fin set Dte
-
-        'doc.WriteStartElement("Signature")
-        'doc.WriteStartAttribute("xmlns")
-        'doc.WriteValue("http://www.w3.org/2000/09/xmldsig#")
-        'doc.WriteEndAttribute()
-
-        'doc.WriteStartElement("SignedInfo")
-        'doc.WriteStartElement("CanonicalizationMethod")
-        'doc.WriteStartAttribute("Algorithm")
-        'doc.WriteValue("http://www.w3.org/TR/2001/REC-xml-c14n-20010315")
-        'doc.WriteEndAttribute()
-        'doc.WriteEndElement()
-
-        'doc.WriteStartElement("SignatureMethod")
-        'doc.WriteStartAttribute("Algorithm")
-        'doc.WriteValue("http://www.w3.org/2000/09/xmldsig#rsa-sha1")
-        'doc.WriteEndAttribute()
-        'doc.WriteEndElement()
-
-        'doc.WriteStartElement("Reference")
-        'doc.WriteStartAttribute("URI")
-        'doc.WriteValue("#F60T33")
-        'doc.WriteEndAttribute()
-
-        'doc.WriteStartElement("Transforms")
-        'doc.WriteStartAttribute("Algorithm")
-        'doc.WriteValue("http://www.w3.org/TR/2001/REC-xml-c14n-20010315")
-        'doc.WriteEndAttribute()
-        'doc.WriteEndElement()
-
-        'doc.WriteStartElement("DigestMethod")
-        'doc.WriteStartAttribute("Algorithm")
-        'doc.WriteValue("http://www.w3.org/2000/09/xmldsig#sha1")
-        'doc.WriteEndAttribute()
-        'doc.WriteEndElement()
-
-        'doc.WriteStartElement("DigestValue")
-        'doc.WriteValue("hlmQtu/AyjUjTDhM3852wvRCr8w")
-        'doc.WriteEndElement()
-        'doc.WriteEndElement() 'fin reference
-        'doc.WriteEndElement() ' fin SignedInfo
-
-        'doc.WriteStartElement("SignatureValue")
-        'doc.WriteValue("ADSDADS")
-        'doc.WriteEndElement()
-
-        'doc.WriteStartElement("KeyInfo")
-        'doc.WriteStartElement("KeyValue")
-        'doc.WriteStartElement("RSAKeyValue")
-        'doc.WriteStartElement("Modulus")
-        'doc.WriteValue("ADSADSADADSADSSD")
-        'doc.WriteEndElement()
-
-        'doc.WriteStartElement("Exponent")
-        'doc.WriteValue("AQAB")
-        'doc.WriteEndElement()
-        'doc.WriteEndElement() 'fin RSAKeyValue
-        'doc.WriteEndElement() 'fin KeyValue
-
-        'doc.WriteStartElement("X509Data")
-        'doc.WriteStartElement("X509Certificate")
-        'doc.WriteValue("aqui va firma digital")
-        'doc.WriteEndElement()
-        'doc.WriteEndElement() ' fin X509Data
-        'doc.WriteEndElement() 'fin KeyInfo
-        'doc.WriteEndElement() ' fin Signature
-
-
         doc.WriteEndDocument() ' fin documento
-
-
 
         doc.Flush()
         doc.Close()
@@ -496,7 +376,6 @@ Public Class ClassXML
         doc.WriteEndElement() 'fin Semilla
         doc.WriteEndElement() 'Fin Item
 
-
         doc.WriteEndElement() 'Fin getToken
         doc.WriteEndDocument() ' fin documento
 
@@ -504,69 +383,5 @@ Public Class ClassXML
         doc.Close()
 
     End Sub
-
-
-    'Public Sub CreaXmlTokenFinal(ByVal seed As String, ByVal Hash As String)
-    '    Dim doc As New XmlTextWriter(System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/TokenFinal.xml", Encoding.UTF8)
-
-    '    doc.WriteStartDocument()
-    '    doc.WriteStartElement("getToken")
-    '    doc.WriteStartElement("Item")
-    '    doc.WriteStartElement("Semilla")
-    '    doc.WriteValue(seed)
-    '    doc.WriteEndElement() 'fin Semilla
-    '    doc.WriteEndElement() 'fin Item
-
-    '    doc.WriteStartElement("Signature")
-    '    doc.WriteStartAttribute("xmlns")
-    '    doc.WriteValue("http://www.w3.org/2000/09/xmldsig#")
-    '    doc.WriteEndAttribute() ' fin xmlns
-    '    doc.WriteStartElement("SignedInfo")
-
-    '    doc.WriteStartElement("CanonicalizationMethod")
-    '    doc.WriteStartAttribute("Algorithm")
-    '    doc.WriteValue("http://www.w3.org/TR/2001/REC-xml-c14n-20010315")
-    '    doc.WriteEndAttribute() 'fin algorithm
-    '    doc.WriteEndElement() 'fin CanonicalizationMethod
-
-    '    doc.WriteStartElement("SignatureMethod")
-    '    doc.WriteStartAttribute("Algorithm")
-    '    doc.WriteValue("http://www.w3.org/TR/2000/09/xmldsig#rsa-shal")
-    '    doc.WriteEndAttribute() 'fin algorithm
-    '    doc.WriteEndElement() 'fin SignatureMethod
-
-    '    doc.WriteStartElement("Reference")
-    '    doc.WriteStartAttribute("URI")
-    '    doc.WriteValue("")
-    '    doc.WriteEndAttribute() 'fin URI
-
-    '    doc.WriteStartElement("Transforms")
-    '    doc.WriteStartElement("Transform")
-    '    doc.WriteStartAttribute("Algorithm")
-    '    doc.WriteValue("http://www.w3.org/2000/09/xmldsig#enveloped-signature")
-    '    doc.WriteEndAttribute() 'fin Algorithm
-    '    doc.WriteEndElement() 'fin Transforms
-    '    doc.WriteEndElement() 'fin Transforms
-
-    '    doc.WriteStartElement("DigesMethod")
-    '    doc.WriteStartAttribute("Algorithm")
-    '    doc.WriteValue("http://www.w3.org/2000/09/xmldsig#shal")
-    '    doc.WriteEndAttribute() 'fin Algorithn
-    '    doc.WriteEndElement() 'fin DigesMethod
-
-    '    doc.WriteStartElement("DigestValue")
-    '    doc.WriteValue(Hash)
-    '    doc.WriteEndElement() 'fin Digestvalue
-    '    doc.WriteEndElement() 'fin Reference
-    '    doc.WriteEndElement() 'fin SignedInfo
-
-    '    doc.WriteEndElement() 'fin Signature
-    '    doc.WriteEndElement() 'fin getToken
-    '    doc.WriteEndDocument() 'fin documento
-
-    '    doc.Flush()
-    '    doc.Close()
-
-    'End Sub
 
 End Class

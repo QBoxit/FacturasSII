@@ -1,0 +1,35 @@
+<fo_usrconfig>
+  <usuario nombre="Amada de las Nieves Ortiz Nilo" rut="07794036-7" email="eduardomenesesr@gmail.com" />
+  <roles>
+    <rol rolnombre="Receptor de Documentos" rolid="RECD" autorizado="True" />
+    <rol rolnombre="Timbrador de DTE" rolid="TIMD" autorizado="True" />
+    <rol rolnombre="Firmador y enviador de DTEs" rolid="FIED" autorizado="True" />
+    <rol rolnombre="Firmador y enviador de libros de compra y venta" rolid="FIEL" autorizado="True" />
+    <rol rolnombre="Generador de Reportes" rolid="GENR" autorizado="True" />
+  </roles>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="#xpointer(/)">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>5EXNYIabx/SybVE0fpzuyl+jv+o=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>CTNsMIXNZrtzEA2s4o7cszcHgEPNFf+YTSdlDzIysT5WmWwEFK70RA7wYxhzRHyzs5dTrSiHoQWAmOXccpfuR/+IXbj/b+lrYCxMBPHlbfu0IShdSiHw522RgkgiNnsmxJ8WBk6/gD4G21GGnben46D6OV33Z/KUhHvOMbqXkjY=</SignatureValue>
+    <KeyInfo>
+      <KeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <RSAKeyValue>
+          <Modulus>qSvpI0Q6alaHvejSND2GjBrsuqHiwwXC74lcAKWy5d6A2jtWx/p+CxhOL7ysVxQssvbbN2xb8s/kLU05hGoqI33y8oNb65fj+46QhZGst6sz1Z3p/JHk7xFm+zn6zAKHouXYoaNOcsQZvRO7EjvTNXg6w0sQMVB0DWZ+DDdv4cE=</Modulus>
+          <Exponent>AQAB</Exponent>
+        </RSAKeyValue>
+      </KeyValue>
+      <X509Data xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <X509Certificate>MIIEizCCA/SgAwIBAgIEAQBlYTANBgkqhkiG9w0BAQUFADCBtTELMAkGA1UEBhMCQ0wxHTAbBgNVBAgUFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQHFAhTYW50aWFnbzEUMBIGA1UEChQLRS1DRVJUQ0hJTEUxIDAeBgNVBAsUF0F1dG9yaWRhZCBDZXJ0aWZpY2Fkb3JhMRcwFQYDVQQDFA5FLUNFUlRDSElMRSBDQTEjMCEGCSqGSIb3DQEJARYUZW1haWxAZS1jZXJ0Y2hpbGUuY2wwHhcNMTAwMzE4MTc1MjE4WhcNMTMwMzE3MDAwMDAwWjCBsjELMAkGA1UEBhMCQ0wxFjAUBgNVBAgUDU1ldHJvcG9saXRhbmExETAPBgNVBAcUCFNhbnRpYWdvMRMwEQYDVQQKFApQYXJ0aWN1bGFyMRMwEQYDVQQLFApQYXJ0aWN1bGFyMSUwIwYDVQQDFBxBZG1pbmlzdHJhZG9yIEZhY3R1cmUgT2ZmaWNlMScwJQYJKoZIhvcNAQkBFhhzY2xpZW50ZXNAZS1jZXJ0Y2hpbGUuY2wwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKkr6SNEOmpWh73o0jQ9howa7Lqh4sMFwu+JXAClsuXegNo7Vsf6fgsYTi+8rFcULLL22zdsW/LP5C1NOYRqKiN98vKDW+uX4/uOkIWRrLerM9Wd6fyR5O8RZvs5+swCh6Ll2KGjTnLEGb0TuxI70zV4OsNLEDFQdA1mfgw3b+HBAgMBAAGjggGnMIIBozAjBgNVHREEHDAaoBgGCCsGAQQBwQEBoAwWCjk2OTI4MTgwLTUwCQYDVR0TBAIwADA8BgNVHR8ENTAzMDGgL6AthitodHRwOi8vY3JsLmUtY2VydGNoaWxlLmNsL2UtY2VydGNoaWxlY2EuY3JsMCMGA1UdEgQcMBqgGAYIKwYBBAHBAQKgDBYKOTY5MjgxODAtNTAfBgNVHSMEGDAWgBTgKP3S4GBPs0brGsz1CJEHcjodCDCB3wYDVR0gBIHXMIHUMIHRBggrBgEEAcNSBTCBxDAvBggrBgEFBQcCARYjaHR0cDovL3d3dy5lLWNlcnRjaGlsZS5jbC8yMDAwL0NQUy8wgZAGCCsGAQUFBwICMIGDGoGARWwgdGl0dWxhciBoYSBzaWRvIHZhbGlkYWRvIGVuIGZvcm1hIHByZXNlbmNpYWwsIHF1ZWRhbmRvIGhhYmlsaXRhZG8gZWwgQ2VydGlmaWNhZG8gcGFyYSB1c28gdHJpYnV0YXJpbywgcGFnb3MsIGNvbWVyY2lvIHkgb3Ryb3MwCwYDVR0PBAQDAgTwMA0GCSqGSIb3DQEBBQUAA4GBAIlDaG+/DkZmiuCHZFefNoqKxV3ok/b7pHJeEv5fgI3kKcV+E5NIbeyJ6bdabS4KrV4L39y6LXwrDt+ohsjQYgQULg+GXrUqPe794pmXJZDj23ELcMUGKV3rEhNhtYlOh82uADZ7MpcZiBm5CKqeH37RK8Ps/stYppERY27Zol9z</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</fo_usrconfig>

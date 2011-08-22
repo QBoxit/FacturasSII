@@ -193,6 +193,7 @@
     <Compile Include="Logica\ControladorLogica.vb" />
     <Compile Include="Logica\factura.vb" />
     <Compile Include="Logica\FirmaDigital.vb" />
+    <Compile Include="Logica\FirmadorXml.vb" />
     <Compile Include="Logica\item.vb" />
     <Compile Include="Logica\libroCompraData.vb" />
     <Compile Include="Logica\NotaDeCredito.vb" />
@@ -367,8 +368,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53587</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/Factura</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
         </WebProjectProperties>
       </FlavorProperties>
