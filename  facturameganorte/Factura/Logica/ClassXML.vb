@@ -6,6 +6,7 @@ Imports System.Collections
 Public Class ClassXML
 
     Dim CP As New controladorPersistencia
+    Dim CL As New ControladorLogica
 
     Public Sub creaXml(ByVal rutEmisor As String, ByVal rutEnvia As String, ByVal rutReceptor As String, ByVal fechaEmision As String, _
     ByVal rznSocial As String, ByVal giroEmisor As String, ByVal DirOrigen As String, ByVal rznsocialReceptor As String, ByVal giroReceptor As String, _
@@ -277,20 +278,20 @@ Public Class ClassXML
 
         ' Lectura de datos desde Folios Autorizados
         '------------------------------------------
-        Dim SignDigital As New FirmaDigital()
+        Dim FirmaDig As New FirmaDigital
         Dim Path As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/Folios/FolioFactura.xml"
-        Dim RE As String = SignDigital.obtieneLecturaXML(Path, "RE")
-        Dim RS As String = SignDigital.obtieneLecturaXML(Path, "RS")
-        Dim TD As String = SignDigital.obtieneLecturaXML(Path, "TD")
-        Dim D As String = SignDigital.obtieneLecturaXML(Path, "D")
-        Dim H As String = SignDigital.obtieneLecturaXML(Path, "H")
-        Dim FA As String = SignDigital.obtieneLecturaXML(Path, "FA")
-        Dim M As String = SignDigital.obtieneLecturaXML(Path, "M")
-        Dim E As String = SignDigital.obtieneLecturaXML(Path, "E")
-        Dim IDK As String = SignDigital.obtieneLecturaXML(Path, "IDK")
-        Dim FRMA As String = SignDigital.obtieneLecturaXML(Path, String.Format("FRMA algortimo={0}SHA1withRSA{0} ", Chr(34)))
-        Dim RSASK As String = SignDigital.obtienePrivateKeyFactura()
-        Dim RSAPUBK As String = SignDigital.obtienePublicKeyFactura()
+        Dim RE As String = CL.obtieneLecturaXML(Path, "RE")
+        Dim RS As String = CL.obtieneLecturaXML(Path, "RS")
+        Dim TD As String = CL.obtieneLecturaXML(Path, "TD")
+        Dim D As String = CL.obtieneLecturaXML(Path, "D")
+        Dim H As String = CL.obtieneLecturaXML(Path, "H")
+        Dim FA As String = CL.obtieneLecturaXML(Path, "FA")
+        Dim M As String = CL.obtieneLecturaXML(Path, "M")
+        Dim E As String = CL.obtieneLecturaXML(Path, "E")
+        Dim IDK As String = CL.obtieneLecturaXML(Path, "IDK")
+        Dim FRMA As String = CL.obtieneLecturaXML(Path, String.Format("FRMA algortimo={0}SHA1withRSA{0} ", Chr(34)))
+        Dim RSASK As String = FirmaDig.obtienePrivateKeyFactura()
+        Dim RSAPUBK As String = FirmaDig.obtienePublicKeyFactura()
 
         doc.WriteStartElement("AUTORIZACION")
         doc.WriteStartElement("CAF")
