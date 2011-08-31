@@ -459,4 +459,64 @@ Public Class ControladorLogica
         Return CP.obtieneValorLibroVenta(mes, año)
     End Function
 
+    Public Function ConvertStringtoXml(ByVal stringXML As String, ByVal name As String) As String
+        Dim DatosXml As String = stringXML
+        Dim pathFile As String = System.AppDomain.CurrentDomain.BaseDirectory() + "/XmlFiles/XmlSeed/" + name + ".xml"
+        Dim xmlDoc As New XmlDocument
+        DatosXml = HttpUtility.UrlDecode(DatosXml)
+        xmlDoc.LoadXml(DatosXml + Environment.NewLine)
+        xmlDoc.Save(pathFile)
+        Return DatosXml
+    End Function
+
+    Public Function ConvertXmlToString(ByVal path As String) As String
+
+        'Load the xml file into XmlDocument object.
+        Dim xmlDoc As New XmlDocument
+        Try
+            xmlDoc.Load(path)
+        Catch e As XmlException
+            MsgBox(e.Message)
+        End Try
+        'Now create StringWriter object to get data from xml document.
+        Dim sw As New StringWriter
+        Dim xw As New XmlTextWriter(sw)
+        xmlDoc.WriteTo(xw)
+        Return sw.ToString()
+    End Function
+
+    Public Function obtieneLecturaXML(ByVal path As String, ByVal NameItem As String) As String
+        Dim reader As New XmlTextReader(path)
+        Dim semilla As String = ""
+        Dim nombreNodo As String = ""
+        reader.WhitespaceHandling = WhitespaceHandling.None
+        Do While (reader.Read())
+            Select Case reader.NodeType
+                Case XmlNodeType.Element 'Mostrar comienzo del elemento.
+                    nombreNodo = reader.Name
+                    If reader.HasAttributes Then 'If attributes exist
+                        While reader.MoveToNextAttribute()
+                            'Mostrar nombre y valor del atributo.
+                            nombreNodo = reader.Name
+                        End While
+                    End If
+                Case XmlNodeType.Text 'Mostrar el texto de cada elemento.
+                    If nombreNodo = NameItem Then
+                        semilla = reader.Value
+                    End If
+            End Select
+        Loop
+        Return semilla
+    End Function
+
+    Public Function ConvertXmlToByte(ByVal Path As String) As Byte()
+        Dim sPath As String
+        sPath = Path
+        Dim Ruta As New FileStream(sPath, FileMode.Open, FileAccess.Read)
+        Dim Binario(CInt(Ruta.Length)) As Byte
+        Ruta.Read(Binario, 0, CInt(Ruta.Length))
+        Ruta.Close()
+        Return Binario
+    End Function
+
 End Class

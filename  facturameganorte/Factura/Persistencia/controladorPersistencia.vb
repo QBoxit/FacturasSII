@@ -260,50 +260,6 @@ Public Class controladorPersistencia
         If File.Exists(pathTemporal) Then File.Delete(pathTemporal)
     End Function
 
-
-    Private Sub enviarMailSii(ByVal pathAdjunto As String)
-        Dim mailMsg As New System.Net.Mail.MailMessage()
-
-        Dim smtp As New System.Net.Mail.SmtpClient
-
-        Dim Anexos As New ArrayList()
-
-        smtp.Host = "smtp.gmail.com" 'servidor de correo
-
-        smtp.Credentials = New System.Net.NetworkCredential("nombreCuenta", "Password")
-
-        Dim mailsend As String = "nombrecuenta" 'direccion de correo a la que se le enviará el mail
-        'Añadimos archivos al Array
-        Anexos.Add(pathAdjunto)
-        'Anexos.Add("C:\archivo2.doc")
-        With (mailMsg)
-            .From = New System.Net.Mail.MailAddress(mailsend)
-            .To.Add(mailsend)
-            .CC.Add("ibarra.alexis@gmail.com")
-            .Subject = "ejemplo de envio"
-            .Body = "ejemplo de envio de correo con sistema factura"
-            .IsBodyHtml = False
-            .Priority = System.Net.Mail.MailPriority.Normal
-            If (Anexos.Count > 0) Then
-                For i As Integer = 0 To Anexos.Count - 1
-                    If (System.IO.File.Exists(Anexos(i))) Then
-                        .Attachments.Add(New System.Net.Mail.Attachment(Anexos(i))) 'adjuntamos los archivos()
-                    Else
-                        MsgBox("El archivo " + Anexos(i) + " No existe")
-                        Exit Sub
-                    End If
-                Next
-            End If
-        End With
-        Try
-            smtp.Send(mailMsg)
-            MsgBox("Mensaje enviado satisfactoriamente")
-        Catch ex As Exception
-            MsgBox("ERROR: " & ex.Message)
-        End Try
-    End Sub
-
-
     'Metodos para ingresar item de Nota credito
 
     Public Sub ingresarNotaCredito(ByVal nc As NotaDeCredito, ByVal arrayItem As ArrayList)
